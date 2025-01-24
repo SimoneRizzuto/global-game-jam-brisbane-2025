@@ -1,6 +1,3 @@
-using System.Linq;
-using GGJ2025.Scripts.Constants;
-using GGJ2025.Scripts.Helpers;
 using Godot;
 
 namespace GGJ2025.Scripts.Enemies;
@@ -16,7 +13,4 @@ public partial class Enemy : CharacterBody3D
 		var roundedPosition = Position;
 		Position = roundedPosition;
 	}
-	
-	private CharacterBody3D Player => GetNodeHelper.GetPlayer(GetTree());
-	private EnemyState _state;
 }
