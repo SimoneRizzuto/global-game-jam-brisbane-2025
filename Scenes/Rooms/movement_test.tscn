@@ -1,15 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ijjkkl6ag37"]
+[gd_scene load_steps=3 format=3 uid="uid://c4ijjkkl6ag37"]
 
-[ext_resource type="Script" path="res://Scripts/Player/character_body_3d.gd" id="1_8tx8j"]
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_6jb74"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ar15u"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_fcd7a"]
 
 [node name="Movement Test" type="Node3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("1_8tx8j")
+script = ExtResource("1_6jb74")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("SphereShape3D_ar15u")
@@ -17,6 +15,3 @@ shape = SubResource("SphereShape3D_ar15u")
 [node name="Camera3D" type="Camera3D" parent="Player"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.50328)
-mesh = SubResource("CylinderMesh_fcd7a")
-skeleton = NodePath("../Player")
