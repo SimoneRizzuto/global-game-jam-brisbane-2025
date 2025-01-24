@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0saw6tbs455n"]
+
+[ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_0bjb2"]
+[ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="2_qtr5s"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_0bjb2")]
+
+[node name="MessageBubble" parent="." instance=ExtResource("2_qtr5s")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 0, 0, -1.98239)
