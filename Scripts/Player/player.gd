@@ -1,9 +1,12 @@
 extends CharacterBody3D
 
-var gravity = 0.05
+var gravity = 2
 var speed = 2
 var jump_speed = 5
 var mouse_sensitivity = 0.001
+var accel = 5
+
+var targetVel = Vector3.ZERO
 
 @onready var camera = $Camera3D
 
@@ -13,12 +16,25 @@ func _ready():
 func _physics_process(delta):
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var movement_dir = camera.global_transform.basis * Vector3(input.x, 0, input.y)
-	velocity.x = movement_dir.x * speed
-	velocity.y = (movement_dir.y * speed) -gravity * delta
-	velocity.z = movement_dir.z * speed
+	
+	targetVel.x = movement_dir.x * speed
+	targetVel.y = (movement_dir.y * speed) 
+	targetVel.z = movement_dir.z * speed
+	
+	if global_position.y > 0:
+		targetVel.y = -gravity
+	
+	velocity.x = lerpf(velocity.x, targetVel.x, accel*delta)
+	velocity.y = lerpf(velocity.y, targetVel.y, accel*delta)
+	velocity.z = lerpf(velocity.z, targetVel.z, accel*delta)
+	
 
+	
+	
 	move_and_slide()
-	#if global_position.x
+	
+
+		
 	#if is_on_floor() and Input.is_action_just_pressed("jump"):
 		#velocity.y = jump_speed
 
