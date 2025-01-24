@@ -1,15 +1,22 @@
+using System.Linq;
+using GGJ2025.Scripts.Constants;
+using GGJ2025.Scripts.Helpers;
 using Godot;
-using System;
 
-public partial class Enemy : Node2D
+namespace GGJ2025.Scripts.Enemies;
+public partial class Enemy : CharacterBody3D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	[Export] public Vector3 CalculatedVelocity;
+	
+	public override void _PhysicsProcess(double delta)
 	{
+		Velocity = CalculatedVelocity * (float)delta;
+		MoveAndSlide();
+		
+		var roundedPosition = Position;
+		Position = roundedPosition;
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	
+	private CharacterBody3D Player => GetNodeHelper.GetPlayer(GetTree());
+	private EnemyState _state;
 }
