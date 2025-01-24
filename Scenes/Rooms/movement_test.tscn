@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4ijjkkl6ag37"]
+[gd_scene load_steps=4 format=3 uid="uid://c4ijjkkl6ag37"]
 
-[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_6jb74"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ar15u"]
-radius = 0.338461
+[ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_3o1uq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4j23h"]
 
@@ -11,13 +8,7 @@ radius = 0.338461
 
 [node name="Movement Test" type="Node3D"]
 
-[node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("1_6jb74")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("SphereShape3D_ar15u")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Player" parent="." instance=ExtResource("1_3o1uq")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.77776)
