@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://1rr0i2unh4sh"]
+[gd_scene load_steps=3 format=3 uid="uid://1rr0i2unh4sh"]
 
 [ext_resource type="Script" path="res://Scripts/MessageBubble/MessageBubble.cs" id="1_g3gi1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f5sq1"]
 
 [node name="MessageBubble" type="Node3D"]
 transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_g3gi1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_f5sq1")
