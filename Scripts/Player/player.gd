@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var gearbox = get_parent().get_parent().get_node("Gearbox")
 
 #physics/movement variables
-var speed = 0.7
+@export var speed = 0.7
 var jump_speed = 5
 var mouse_sensitivity = 0.001
 var accel = 5
@@ -13,7 +13,7 @@ var strafeMod = 0.3
 
 #systems for managing dashing
 var dashing = false
-var dashSpeed = 3
+@export var dashSpeed = 3
 
 #Systems for managing surfacing, including launching out of the water and bobbing on the surface
 var gravity = 2
@@ -29,8 +29,8 @@ var surfaced = false
 var bobTime = 0.0
 var bobFrequency = 0.2
 var bobAmplitude = 0.1
-var baseFOV = 38.0
-var maxFOV = 45.0
+@export var baseFOV = 38.0
+@export var maxFOV = 45.0
 var FOVShift = 1.0
 
 #oxygen Management
