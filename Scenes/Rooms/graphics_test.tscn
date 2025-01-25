@@ -1,12 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://snqgfih6crsp"]
+[gd_scene load_steps=17 format=3 uid="uid://snqgfih6crsp"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
-[ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="2_q6vk3"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
 [ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="4_nxdla"]
 [ext_resource type="Texture2D" uid="uid://cf5wklwulr3oj" path="res://Assets/Textures/autumn_field_puresky_1k.hdr" id="5_s3clf"]
+[ext_resource type="PackedScene" uid="uid://dyy8stvo1u7vi" path="res://Assets/Shapes/Gwubluhbluh.blend" id="6_8jrnu"]
+[ext_resource type="Material" uid="uid://cn5q4r1r0s01k" path="res://Assets/Materials/metal.tres" id="7_ykjt3"]
 
-[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_ky4o0"]
+[sub_resource type="SphereMesh" id="SphereMesh_tq82c"]
+radius = 0.1
+height = 0.1
+radial_segments = 4
+rings = 4
+
+[sub_resource type="Curve" id="Curve_vn56e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.498952, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iyxjg"]
 
@@ -20,16 +29,18 @@ emission_energy_multiplier = 0.82
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.15
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1eajp"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vp14f"]
 panorama = ExtResource("5_s3clf")
+energy_multiplier = 1.75
 
 [sub_resource type="Sky" id="Sky_eyu0t"]
-sky_material = SubResource("PanoramaSkyMaterial_1eajp")
+sky_material = SubResource("PanoramaSkyMaterial_vp14f")
 
 [sub_resource type="Environment" id="Environment_v6avm"]
 background_mode = 2
 background_energy_multiplier = 1.06
 sky = SubResource("Sky_eyu0t")
+sky_rotation = Vector3(-0.58294, -4.18879, -1.24791)
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 1.06
 tonemap_exposure = 1.58
@@ -37,44 +48,57 @@ ssao_radius = 64.5
 ssao_intensity = 16.0
 ssao_power = 2.12132
 ssao_detail = 0.3
-sdfgi_use_occlusion = true
+sdfgi_enabled = true
 sdfgi_bounce_feedback = 0.55
-sdfgi_cascades = 3
-sdfgi_min_cell_size = 0.27
-sdfgi_cascade0_distance = 17.28
-sdfgi_max_distance = 138.24
+sdfgi_cascades = 2
+sdfgi_min_cell_size = 0.5
 sdfgi_energy = 1.19
 glow_enabled = true
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_light_energy = 1.45
-fog_sun_scatter = 0.31
 fog_density = 1.0
 fog_height = -41.12
-fog_height_density = 0.257
+fog_depth_begin = 0.0
+fog_depth_end = 208.8
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0963
-volumetric_fog_albedo = Color(0.133289, 0.300078, 0.451168, 1)
+volumetric_fog_density = 0.1806
+volumetric_fog_albedo = Color(0.0399728, 0.126319, 0.204303, 1)
 volumetric_fog_emission = Color(0.860369, 0.860369, 0.860369, 1)
 volumetric_fog_emission_energy = 0.0
+volumetric_fog_length = 32.0
 volumetric_fog_ambient_inject = 0.13
 adjustment_brightness = 1.04
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o6pm1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mlwnf"]
 
 [node name="Movement Test" type="Node3D"]
 transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_dpq2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.972226, 0)
+transform = Transform3D(1, 1.09139e-11, -1.16415e-10, -4.54747e-13, 1, 2.32831e-10, 1.16415e-10, -2.32831e-10, 1, 2.72848e-12, -0.972226, 0)
+wall_min_slide_angle = 0.0
 
 [node name="Camera3D" parent="Player/CameraArm" index="0"]
 environment = null
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Player/CameraArm/Camera3D" index="1"]
-amount = 500
-mesh = SubResource("PlaceholderMesh_ky4o0")
+transform = Transform3D(1, 2.13731e-11, 0, -6.82121e-12, 1, 0, 1.16415e-10, 0, 1, 0.00147586, 0.00339723, -0.948269)
+amount = 8000
+lifetime = 2.5
+lifetime_randomness = 0.3
+mesh = SubResource("SphereMesh_tq82c")
 emission_shape = 1
-emission_sphere_radius = 34.87
+emission_sphere_radius = 50.0
 particle_flag_align_y = true
+gravity = Vector3(0, -0.001, 0)
+initial_velocity_max = 0.01
+scale_amount_min = 0.01
+scale_amount_max = 0.02
+scale_amount_curve = SubResource("Curve_vn56e")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, -1.74623e-10, 0, 4.07454e-10, 100, 5.96046e-08, 5.96046e-08, 0, 100, 0.0202925, 0.094276, 0.0579107)
@@ -90,40 +114,36 @@ mesh = SubResource("PlaneMesh_iyxjg")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_kyd1n")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control" type="Control" parent="Control"]
-layout_mode = 1
-anchors_preset = 0
-
-[node name="Label" type="Label" parent="Control/Control"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 128.0
-offset_bottom = 31.0
-text = "100%"
-script = ExtResource("2_q6vk3")
-
 [node name="MessageBubble" parent="." instance=ExtResource("3_rtql8")]
 transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
 
 [node name="Big shapes yahoo" parent="." instance=ExtResource("4_nxdla")]
-transform = Transform3D(1.18766, 0.000193469, -0.00184844, -0.000200102, 1.18766, -0.00425488, 0.00184774, 0.00425518, 1.18766, -6.95154, -32.2568, 18.6937)
+transform = Transform3D(1.18766, 0.000193469, -0.00184844, -0.000200102, 1.18766, -0.00425488, 0.00184774, 0.00425518, 1.18766, -7.05052, -32.3114, 18.7162)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.998241, -0.0552406, -0.0215336, 0.00605408, -0.266326, 0.963864, -0.0589794, -0.962299, -0.265523, 0, 0, 0)
 light_energy = 16.0
-light_volumetric_fog_energy = 1.367
+light_volumetric_fog_energy = 5.102
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6avm")
+camera_attributes = SubResource("CameraAttributesPractical_o6pm1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(290649, -1.3113e-06, -0.000213623, 8.34465e-07, 290649, 0.000610352, 0.000274658, -0.000488281, 290649, -0.269208, -0.00268828, 0.762563)
+mesh = SubResource("PlaneMesh_mlwnf")
+skeleton = NodePath("../Gwubluhbluh")
+
+[node name="Gwubluhbluh" parent="." instance=ExtResource("6_8jrnu")]
+transform = Transform3D(9.03956, -7.78142, 0.224985, 6.24749, 7.04585, -7.32392, 4.64436, 5.66747, 9.41406, -10.3789, -67.2474, 59.5296)
+
+[node name="TorusKnot" parent="Gwubluhbluh" index="0"]
+surface_material_override/0 = ExtResource("7_ykjt3")
+
+[node name="TorusKnot_001" parent="Gwubluhbluh" index="1"]
+transform = Transform3D(-0.139112, -0.985537, -0.0967692, 0.913546, -0.165435, 0.371572, -0.382207, -0.0367128, 0.923347, 0.0853199, -0.0430713, 0.128884)
+surface_material_override/0 = ExtResource("7_ykjt3")
 
 [editable path="Player"]
+[editable path="Gwubluhbluh"]

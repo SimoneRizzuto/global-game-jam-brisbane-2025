@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvelh8copo66k"]
+[gd_scene load_steps=5 format=3 uid="uid://dvelh8copo66k"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_0bjb2"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="2_qtr5s"]
+[ext_resource type="PackedScene" uid="uid://bqtskaap68mhy" path="res://Scenes/Enemies/enemy.tscn" id="3_3c2y7"]
+
+[sub_resource type="Curve3D" id="Curve3D_hgvli"]
+bake_interval = 20.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.0789, 0, -1.55776, 0, 0, 0, 0, 0, 0, 6.20215, 0, -0.477639, 0, 0, 0, 0, 0, 0, 7.37336, 0, 2.59355, 0, 0, 0, 0, 0, 0, 5.21312, 0, 5.24831, 0, 0, 0, 0, 0, 0, 1.27003, 0, 5.1442, 0, 0, 0, 0, 0, 0, -2.13952, 0, 3.11409, 0, 0, 0, 0, 0, 0, -7.55314, 0, 3.36135, 0, 0, 0, 0, 0, 0, -10.8456, 0, -0.920099, 0, 0, 0, 0, 0, 0, -10.3771, 0, -3.19746, 0, 0, 0, 0, 0, 0, -7.65725, 0, -5.01936, 0, 0, 0, 0, 0, 0, -3.79223, 0, -5.85222, 0, 0, 0, 0, 0, 0, 0.0207282, 0, -3.99129, 0, 0, 0, 0, 0, 0, 1.02277, 0, -1.84406, 0, 0, 0, 0, 0, 0, 3.0789, 0, -1.55776),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 14
 
 [node name="Main" type="Node3D"]
 
@@ -9,4 +18,15 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076344, -0.00456107, 0.0445466)
 
 [node name="MessageBubble" parent="." instance=ExtResource("2_qtr5s")]
-transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 0, 0, -1.98239)
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 1.28927, 0, -2.29169)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270948, 0, -0.532626)
+curve = SubResource("Curve3D_hgvli")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.153292, 0, -0.98817, 0, 1, 0, 0.98817, 0, 0.153292, -3.44663, 0, -5.78846)
+progress = 38.6712
+
+[node name="Enemy" parent="Path3D/PathFollow3D" instance=ExtResource("3_3c2y7")]
+transform = Transform3D(-0.32684, 0, 0.945081, 0, 1, 0, -0.945081, 0, -0.32684, -0.140102, 0, 0.68976)
