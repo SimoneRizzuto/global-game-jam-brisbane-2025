@@ -1,14 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=15 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
 [ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="3_qq2uk"]
 [ext_resource type="Script" path="res://Scenes/Rooms/message.gd" id="4_apoap"]
+[ext_resource type="Texture2D" uid="uid://cxsv75ykd1bt4" path="res://Assets/UI/UI_1.png" id="4_sl26s"]
 [ext_resource type="FontFile" uid="uid://d0r45t73xagkp" path="res://Assets/Fonts/terminal-dosis/TerminalDosis-ExtraLight.ttf" id="5_olmwa"]
+[ext_resource type="Texture2D" uid="uid://cra6ded602me7" path="res://Assets/UI/UI_2.png" id="7_0vekq"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
 default_font_size = 32
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3axs8"]
+content_margin_left = 19.0
+texture = ExtResource("4_sl26s")
+modulate_color = Color(1, 1, 1, 0.631373)
 
 [sub_resource type="Theme" id="Theme_2fmah"]
 default_font = ExtResource("5_olmwa")
@@ -80,13 +87,17 @@ layout_mode = 1
 anchors_preset = 0
 
 [node name="Label" type="Label" parent="OxygenMeter"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 128.0
-offset_bottom = 31.0
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 226.0
+offset_bottom = 109.0
 theme = SubResource("Theme_wbco5")
-text = "100%"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_3axs8")
+text = "100.0"
+vertical_alignment = 1
+autowrap_mode = 2
 script = ExtResource("3_qq2uk")
 
 [node name="Message" type="Control" parent="."]
@@ -104,21 +115,44 @@ script = ExtResource("4_apoap")
 layout_mode = 0
 offset_left = 20.0
 offset_top = -376.0
-offset_right = 304.0
-offset_bottom = -114.0
+offset_right = 264.0
+offset_bottom = 8.0
 color = Color(0, 0, 0, 0.172549)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Message/TextContainer"]
 layout_mode = 0
 offset_left = 14.0
-offset_right = 278.0
-offset_bottom = 256.0
+offset_top = 8.0
+offset_right = 240.0
+offset_bottom = 336.0
 mouse_filter = 1
 theme = SubResource("Theme_2fmah")
 text = "omg. so my best friend Taylor told me that her sister Lez told her that her boyfriend John told her that Jordan thinks 
 i am a poser and fake. that's not true!!!!"
 fit_content = true
 scroll_active = false
+
+[node name="TextureRect2" type="TextureRect" parent="Message/TextContainer"]
+modulate = Color(1, 1, 1, 0.486275)
+layout_mode = 0
+offset_left = 256.0
+offset_top = -48.0
+offset_right = 4618.0
+offset_bottom = 1094.0
+scale = Vector2(-0.065, 0.065)
+texture = ExtResource("4_sl26s")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Message/TextContainer"]
+modulate = Color(1, 1, 1, 0.486275)
+layout_mode = 0
+offset_left = -16.0
+offset_top = 336.0
+offset_right = 4346.0
+offset_bottom = 1478.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("7_0vekq")
+stretch_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Message"]
 libraries = {
