@@ -7,6 +7,7 @@ public partial class Gearbox : Node
 	public static Gearbox instance = null;
 
 	public Node UI;
+	public bool paused = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
