@@ -21,6 +21,7 @@ var fallSpeed = 2
 var sinkSpeed = 0.2
 var surfacePoint = 0.25
 var bobPoint = -0.5
+var surfaced = false
 
 #camera Systems
 @onready var cameraArm = $CameraArm
@@ -28,7 +29,7 @@ var bobPoint = -0.5
 var bobTime = 0.0
 var bobFrequency = 0.2
 var bobAmplitude = 0.1
-var baseFOV = 30.0
+var baseFOV = 38.0
 var maxFOV = 45.0
 var FOVShift = 1.0
 
@@ -87,20 +88,23 @@ func _physics_process(delta):
 func surface_and_descent(delta):
 	if global_position.y > surfacePoint:
 		velocity.y = lerpf(velocity.y, -fallSpeed, gravity*delta)
-		gearbox.oxygen += delta * oxygenRefil
+		surfaced = true
 	else:
 		if abs(targetVel.y) != 0:
 			velocity.y = lerpf(velocity.y, targetVel.y, accel*delta)
-			gearbox.oxygen -= delta * oxygenDrain
 		else:
 			if  global_position.y > bobPoint:
 				velocity.y = lerpf(velocity.y, 0, friction*delta)
-				gearbox.oxygen += delta * oxygenRefil
 			else:
 				velocity.y = lerpf(velocity.y, -sinkSpeed, friction*delta)
-				gearbox.oxygen -= delta * oxygenDrain
 	
 	
+	if global_position.y < -surfacePoint:
+		gearbox.oxygen -= delta * oxygenDrain
+	else:
+		gearbox.oxygen += delta * oxygenRefil
+	
+	gearbox.oxygen = clampf(gearbox.oxygen, 0,100);
 
 func camera_bob(delta):
 	bobTime += delta# * velocity.length()
