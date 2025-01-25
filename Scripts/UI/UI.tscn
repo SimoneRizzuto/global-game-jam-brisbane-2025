@@ -83,6 +83,7 @@ grow_vertical = 2
 script = ExtResource("1_7un6y")
 
 [node name="OxygenMeter" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 
