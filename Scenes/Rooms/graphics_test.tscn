@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://snqgfih6crsp"]
+[gd_scene load_steps=20 format=3 uid="uid://snqgfih6crsp"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
 [ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="4_nxdla"]
+[ext_resource type="Script" path="res://Assets/FogController.cs" id="5_2u51d"]
+[ext_resource type="Material" uid="uid://dnubkdpewcryp" path="res://Assets/Materials/water.tres" id="5_fead7"]
 [ext_resource type="Texture2D" uid="uid://cf5wklwulr3oj" path="res://Assets/Textures/autumn_field_puresky_1k.hdr" id="5_s3clf"]
 [ext_resource type="PackedScene" uid="uid://dyy8stvo1u7vi" path="res://Assets/Shapes/Gwubluhbluh.blend" id="6_8jrnu"]
 [ext_resource type="Material" uid="uid://cn5q4r1r0s01k" path="res://Assets/Materials/metal.tres" id="7_ykjt3"]
@@ -29,6 +31,10 @@ emission_energy_multiplier = 0.82
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.15
 
+[sub_resource type="FogMaterial" id="FogMaterial_sbrg8"]
+density = 0.1806
+albedo = Color(0.121955, 0.240835, 0.39837, 1)
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vp14f"]
 panorama = ExtResource("5_s3clf")
 energy_multiplier = 1.75
@@ -38,9 +44,7 @@ sky_material = SubResource("PanoramaSkyMaterial_vp14f")
 
 [sub_resource type="Environment" id="Environment_v6avm"]
 background_mode = 2
-background_energy_multiplier = 1.06
 sky = SubResource("Sky_eyu0t")
-sky_rotation = Vector3(-0.58294, -4.18879, -1.24791)
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 1.06
 tonemap_exposure = 1.58
@@ -54,17 +58,16 @@ sdfgi_cascades = 2
 sdfgi_min_cell_size = 0.5
 sdfgi_energy = 1.19
 glow_enabled = true
-fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0, 0, 0, 1)
+fog_light_color = Color(1, 1, 1, 1)
 fog_light_energy = 1.45
 fog_density = 1.0
+fog_sky_affect = 0.0
 fog_height = -41.12
 fog_depth_begin = 0.0
 fog_depth_end = 208.8
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.1806
-volumetric_fog_albedo = Color(0.0399728, 0.126319, 0.204303, 1)
+volumetric_fog_density = 0.0
 volumetric_fog_emission = Color(0.860369, 0.860369, 0.860369, 1)
 volumetric_fog_emission_energy = 0.0
 volumetric_fog_length = 32.0
@@ -72,6 +75,8 @@ volumetric_fog_ambient_inject = 0.13
 adjustment_brightness = 1.04
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o6pm1"]
+auto_exposure_enabled = true
+auto_exposure_scale = 0.66
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mlwnf"]
 
@@ -121,17 +126,24 @@ transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0
 transform = Transform3D(1.18766, 0.000193469, -0.00184844, -0.000200102, 1.18766, -0.00425488, 0.00184774, 0.00425518, 1.18766, -7.05052, -32.3114, 18.7162)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.998241, -0.0552406, -0.0215336, 0.00605408, -0.266326, 0.963864, -0.0589794, -0.962299, -0.265523, 0, 0, 0)
-light_energy = 16.0
-light_volumetric_fog_energy = 5.102
+transform = Transform3D(0.998233, -0.055598, -0.0209942, -0.0189693, -0.632862, 0.774031, -0.0563211, -0.772267, -0.632799, 0, 0, 0)
+light_energy = 2.241
+light_volumetric_fog_energy = 10.705
 shadow_enabled = true
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(0.999999, 0.000162899, -0.00155636, -0.000168484, 0.999993, -0.00358252, 0.00155578, 0.00358278, 0.999993, 0, -50.1, 0)
+size = Vector3(100, 100, 100)
+material = SubResource("FogMaterial_sbrg8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6avm")
 camera_attributes = SubResource("CameraAttributesPractical_o6pm1")
+script = ExtResource("5_2u51d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(290649, -1.3113e-06, -0.000213623, 8.34465e-07, 290649, 0.000610352, 0.000274658, -0.000488281, 290649, -0.269208, -0.00268828, 0.762563)
+transform = Transform3D(1000, -6.0536e-09, -1.3113e-06, -4.00469e-08, 1000, 3.8147e-06, 1.3113e-06, -2.38419e-06, 1000, -6.90327e-06, -0.0423773, -0.000151831)
+material_override = ExtResource("5_fead7")
 mesh = SubResource("PlaneMesh_mlwnf")
 skeleton = NodePath("../Gwubluhbluh")
 
