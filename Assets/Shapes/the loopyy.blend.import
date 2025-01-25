@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dupmxpnw8ua85"
-path="res://.godot/imported/Big shapes yahoo.blend-7d441a0c621edb61ff9ed4edf7af7e6e.scn"
+uid="uid://djpgt30ds2h5j"
+path="res://.godot/imported/the loopyy.blend-0c742354b8adc6fe4bcd3275cb75764c.scn"
 
 [deps]
 
-source_file="res://Assets/Shapes/Big shapes yahoo.blend"
-dest_files=["res://.godot/imported/Big shapes yahoo.blend-7d441a0c621edb61ff9ed4edf7af7e6e.scn"]
+source_file="res://Assets/Shapes/the loopyy.blend"
+dest_files=["res://.godot/imported/the loopyy.blend-0c742354b8adc6fe4bcd3275cb75764c.scn"]
 
 [params]
 
@@ -31,22 +31,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"Material.001": {
-"use_external/enabled": true,
-"use_external/path": "res://Assets/Materials/metal.tres"
-}
-},
-"nodes": {
-"PATH:TorusKnot_001": {
-"generate/physics": true
-},
-"PATH:TorusKnot_002": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
