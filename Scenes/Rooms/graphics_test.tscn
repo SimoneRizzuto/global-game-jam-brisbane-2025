@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://snqgfih6crsp"]
+
+[ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
+[ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="2_q6vk3"]
+[ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
+[ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="4_nxdla"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iyxjg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pqxi"]
+albedo_color = Color(0, 0.207017, 0.207112, 1)
+emission_enabled = true
+emission = Color(0.274003, 0.659443, 0.786907, 1)
+emission_energy_multiplier = 0.82
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyd1n"]
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.15
+
+[sub_resource type="Sky" id="Sky_eyu0t"]
+
+[sub_resource type="Environment" id="Environment_v6avm"]
+background_mode = 2
+background_energy_multiplier = 1.06
+sky = SubResource("Sky_eyu0t")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.06
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.323558, 0.526852, 0.723662, 1)
+
+[node name="Movement Test" type="Node3D"]
+transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_dpq2y")]
+transform = Transform3D(1, 0, 0, 0, -0.015463, 0.99988, 0, -0.99988, -0.015463, 0, -0.972226, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, -1.74623e-10, 0, 5.23869e-10, 100, 2.98023e-08, 2.98023e-08, 0, 100, -0.000995783, -0.00846534, -0.00940466)
+visible = false
+mesh = SubResource("PlaneMesh_iyxjg")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_0pqxi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, -2.04636e-11, 3.49246e-10, 2.86491e-11, -1, 8.77772e-08, 3.49246e-10, -8.77772e-08, -1, -0.000708234, -0.000824975, -0.000802633)
+visible = false
+mesh = SubResource("PlaneMesh_iyxjg")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_kyd1n")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="Control/Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "100%"
+script = ExtResource("2_q6vk3")
+
+[node name="MessageBubble" parent="." instance=ExtResource("3_rtql8")]
+transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
+
+[node name="Big shapes yahoo" parent="." instance=ExtResource("4_nxdla")]
+transform = Transform3D(2.30809, 0.000375986, -0.00359224, -0.000388875, 2.30808, -0.00826888, 0.00359087, 0.00826947, 2.30808, -50.5125, -54.9273, 47.5729)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999999, 0.000162899, -0.00155636, -0.000168483, 0.999993, -0.00358255, 0.00155577, 0.00358281, 0.999993, 0, 0, 0)
+light_energy = 5.333
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v6avm")
+
+[editable path="Player"]
