@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dyy8stvo1u7vi"
-path="res://.godot/imported/Gwubluhbluh.blend-3ac7995d0991867f0342bd2022efa3ad.scn"
+uid="uid://gjw3bdr1gl17"
+path="res://.godot/imported/Treehehehehe.blend-041445583fdcfbb104b0cecca638496d.scn"
 
 [deps]
 
-source_file="res://Assets/Shapes/Gwubluhbluh.blend"
-dest_files=["res://.godot/imported/Gwubluhbluh.blend-3ac7995d0991867f0342bd2022efa3ad.scn"]
+source_file="res://Assets/Shapes/Treehehehehe.blend"
+dest_files=["res://.godot/imported/Treehehehehe.blend-041445583fdcfbb104b0cecca638496d.scn"]
 
 [params]
 
@@ -31,16 +31,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:TorusKnot": {
-"generate/physics": true
-},
-"PATH:TorusKnot_001": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
