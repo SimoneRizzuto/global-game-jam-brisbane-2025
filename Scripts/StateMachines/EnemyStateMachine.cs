@@ -10,6 +10,8 @@ public partial class EnemyStateMachine : Node
 {
     [Export] public EnemyState EnemyState = EnemyState.Patrolling;
     public Enemy Enemy => GetParent<Enemy>();
+
+    public Vector3? GlobalLastPositionOnPath;
     
     // signals
     public void _on_chase_player_area_3d_body_entered(Node3D bodyEntered)
