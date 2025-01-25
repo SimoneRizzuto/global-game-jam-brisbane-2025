@@ -1,4 +1,4 @@
-tends CharacterBody3D
+extends CharacterBody3D
 
 
 #physics/movement variables

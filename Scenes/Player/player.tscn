@@ -24,6 +24,7 @@ fov = 37.8493
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraArm"]
 spot_range = 7.5
+spot_angle = 30.0
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraArm"]
 shape = SubResource("SphereShape3D_65f8b")
