@@ -7,5 +7,3 @@
 script = ExtResource("1_8dana")
 
 [node name="UI" parent="." instance=ExtResource("2_qkiua")]
-size_flags_horizontal = 1
-size_flags_vertical = 1

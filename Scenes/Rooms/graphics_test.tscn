@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://snqgfih6crsp"]
+[gd_scene load_steps=17 format=3 uid="uid://snqgfih6crsp"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
-[ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="2_q6vk3"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
 [ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="4_nxdla"]
 [ext_resource type="Texture2D" uid="uid://cf5wklwulr3oj" path="res://Assets/Textures/autumn_field_puresky_1k.hdr" id="5_s3clf"]
@@ -114,27 +113,6 @@ visible = false
 mesh = SubResource("PlaneMesh_iyxjg")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_kyd1n")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control" type="Control" parent="Control"]
-layout_mode = 1
-anchors_preset = 0
-
-[node name="Label" type="Label" parent="Control/Control"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 128.0
-offset_bottom = 31.0
-text = "100%"
-script = ExtResource("2_q6vk3")
 
 [node name="MessageBubble" parent="." instance=ExtResource("3_rtql8")]
 transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
