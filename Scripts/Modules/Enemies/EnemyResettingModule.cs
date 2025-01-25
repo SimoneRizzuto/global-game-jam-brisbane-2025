@@ -7,10 +7,10 @@ namespace GGJ2025.Scripts.Modules.Enemies;
 [GlobalClass]
 public partial class EnemyResettingModule : Node
 {
-    public EnemyStateMachine State => GetParent().GetParent<EnemyStateMachine>();
+    public EnemyStateMachine State => GetParent<EnemyStateMachine>();
 
     public override void _Process(double delta)
     {
-        if (State.EnemyState != EnemyState.Resetting) return;
+        if (State?.EnemyState != EnemyState.Resetting) return;
     }
 }

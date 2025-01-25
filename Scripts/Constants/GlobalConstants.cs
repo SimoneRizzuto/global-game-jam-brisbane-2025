@@ -6,5 +6,5 @@ public static class GlobalConstants
 
 public static class NodeGroup
 {
-	public const string Player = "Player";
+	public const string Player = "player";
 }
