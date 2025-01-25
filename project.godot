@@ -19,6 +19,10 @@ config/icon="res://Scripts/Static/icon.svg"
 
 project/assembly_name="GGJ2025"
 
+[global_group]
+
+player="grouping for player nodes"
+
 [input]
 
 left={

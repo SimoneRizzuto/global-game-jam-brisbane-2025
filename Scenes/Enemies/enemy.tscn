@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqtskaap68mhy"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_yfy82"]
+[ext_resource type="Script" path="res://Scripts/StateMachines/EnemyStateMachine.cs" id="2_6ih1e"]
+[ext_resource type="Script" path="res://Scripts/Modules/Enemies/EnemyPatrollingModule.cs" id="3_mfye0"]
+[ext_resource type="Script" path="res://Scripts/Modules/Enemies/EnemyChasingModule.cs" id="4_woh1n"]
+[ext_resource type="Script" path="res://Scripts/Modules/Enemies/EnemyResettingModule.cs" id="5_pg3ei"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lg1f1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pdt8n"]
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_yfy82")
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("2_6ih1e")
+
+[node name="EnemyPatrollingModule" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("3_mfye0")
+
+[node name="EnemyChasingModule" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("4_woh1n")
+
+[node name="EnemyResettingModule" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("5_pg3ei")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_lg1f1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00095, 0, 0, 0, 1.00095, 0, 0, 0, 1.00095, 0, 0, 0)
+mesh = SubResource("BoxMesh_pdt8n")
