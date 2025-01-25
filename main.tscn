@@ -18,15 +18,15 @@ point_count = 14
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076344, -0.00456107, 0.0445466)
 
 [node name="MessageBubble" parent="." instance=ExtResource("2_qtr5s")]
-transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 0, 0, -1.98239)
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 1.28927, 0, -2.29169)
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270948, 0, -0.532626)
 curve = SubResource("Curve3D_hgvli")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.575321, 0, -0.817921, 0, 1, 0, 0.817921, 0, 0.575321, -7.75373, 0, -4.9798)
-progress = 34.25
+transform = Transform3D(0.153292, 0, -0.98817, 0, 1, 0, 0.98817, 0, 0.153292, -3.44663, 0, -5.78846)
+progress = 38.6712
 
 [node name="Enemy" parent="Path3D/PathFollow3D" instance=ExtResource("3_3c2y7")]
 transform = Transform3D(-0.32684, 0, 0.945081, 0, 1, 0, -0.945081, 0, -0.32684, -0.140102, 0, 0.68976)
