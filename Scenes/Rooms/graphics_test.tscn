@@ -1,16 +1,11 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=16 format=3 uid="uid://snqgfih6crsp"]
-=======
-[gd_scene load_steps=8 format=3 uid="uid://snqgfih6crsp"]
->>>>>>> Stashed changes
+[gd_scene load_steps=18 format=3 uid="uid://snqgfih6crsp"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
 [ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="2_q6vk3"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
 [ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="4_nxdla"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://cf5wklwulr3oj" path="res://Assets/Textures/autumn_field_puresky_1k.hdr" id="5_s3clf"]
-[ext_resource type="PackedScene" uid="uid://bsgplnphjkrur" path="res://Assets/Shapes/Gwubluhbluh.blend" id="6_8jrnu"]
+[ext_resource type="PackedScene" uid="uid://dyy8stvo1u7vi" path="res://Assets/Shapes/Gwubluhbluh.blend" id="6_8jrnu"]
 [ext_resource type="Material" uid="uid://cn5q4r1r0s01k" path="res://Assets/Materials/metal.tres" id="7_ykjt3"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tq82c"]
@@ -22,8 +17,6 @@ rings = 4
 [sub_resource type="Curve" id="Curve_vn56e"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.498952, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
-=======
->>>>>>> Stashed changes
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iyxjg"]
 
@@ -37,7 +30,6 @@ emission_energy_multiplier = 0.82
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.15
 
-<<<<<<< Updated upstream
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vp14f"]
 panorama = ExtResource("5_s3clf")
 energy_multiplier = 1.75
@@ -80,14 +72,16 @@ volumetric_fog_length = 32.0
 volumetric_fog_ambient_inject = 0.13
 adjustment_brightness = 1.04
 
-=======
->>>>>>> Stashed changes
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o6pm1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mlwnf"]
+
 [node name="Movement Test" type="Node3D"]
 transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_dpq2y")]
-<<<<<<< Updated upstream
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.972226, 0)
+wall_min_slide_angle = 0.0
 
 [node name="Camera3D" parent="Player/CameraArm" index="0"]
 environment = null
@@ -110,27 +104,13 @@ scale_amount_curve = SubResource("Curve_vn56e")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, -1.74623e-10, 0, 4.07454e-10, 100, 5.96046e-08, 5.96046e-08, 0, 100, 0.0202925, 0.094276, 0.0579107)
 visible = false
-=======
-transform = Transform3D(1, 0, 0, 0, -0.015463, 0.99988, 0, -0.99988, -0.015463, 0, -0.972226, 0)
-
-[node name="SpotLight3D" parent="Player/CameraArm" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0291691, -0.0608673, -0.00519657)
-visible = false
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
->>>>>>> Stashed changes
 mesh = SubResource("PlaneMesh_iyxjg")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_0pqxi")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D2"]
-<<<<<<< Updated upstream
 transform = Transform3D(1, -2.04636e-11, 3.49246e-10, 2.86491e-11, -1, 8.77772e-08, 3.49246e-10, -8.77772e-08, -1, -0.000708234, -0.000824975, -0.000802633)
 visible = false
-=======
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
->>>>>>> Stashed changes
 mesh = SubResource("PlaneMesh_iyxjg")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_kyd1n")
@@ -160,7 +140,6 @@ script = ExtResource("2_q6vk3")
 transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
 
 [node name="Big shapes yahoo" parent="." instance=ExtResource("4_nxdla")]
-<<<<<<< Updated upstream
 transform = Transform3D(1.18766, 0.000193469, -0.00184844, -0.000200102, 1.18766, -0.00425488, 0.00184774, 0.00425518, 1.18766, -7.05052, -32.3114, 18.7162)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -171,6 +150,12 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6avm")
+camera_attributes = SubResource("CameraAttributesPractical_o6pm1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(290649, -1.3113e-06, -0.000213623, 8.34465e-07, 290649, 0.000610352, 0.000274658, -0.000488281, 290649, -0.269208, -0.00268828, 0.762563)
+mesh = SubResource("PlaneMesh_mlwnf")
+skeleton = NodePath("../Gwubluhbluh")
 
 [node name="Gwubluhbluh" parent="." instance=ExtResource("6_8jrnu")]
 transform = Transform3D(9.03956, -7.78142, 0.224985, 6.24749, 7.04585, -7.32392, 4.64436, 5.66747, 9.41406, -10.3789, -67.2474, 59.5296)
@@ -179,12 +164,8 @@ transform = Transform3D(9.03956, -7.78142, 0.224985, 6.24749, 7.04585, -7.32392,
 surface_material_override/0 = ExtResource("7_ykjt3")
 
 [node name="TorusKnot_001" parent="Gwubluhbluh" index="1"]
+transform = Transform3D(-0.139112, -0.985537, -0.0967692, 0.913546, -0.165435, 0.371572, -0.382207, -0.0367128, 0.923347, 0.0853199, -0.0430713, 0.128884)
 surface_material_override/0 = ExtResource("7_ykjt3")
 
 [editable path="Player"]
 [editable path="Gwubluhbluh"]
-=======
-transform = Transform3D(2.30809, 0.000375986, -0.00359224, -0.000388875, 2.30808, -0.00826888, 0.00359087, 0.00826947, 2.30808, -50.5125, -54.9273, 47.5729)
-
-[editable path="Player"]
->>>>>>> Stashed changes
