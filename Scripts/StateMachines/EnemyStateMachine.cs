@@ -6,6 +6,6 @@ namespace GGJ2025.Scripts.StateMachines;
 [GlobalClass]
 public partial class EnemyStateMachine : Node
 {
-    [Export] public EnemyState EnemyState = EnemyState.Patrolling;
-    public CharacterBody3D Enemy => GetParent<CharacterBody3D>();
+    [Export] public EnemyState EnemyState = EnemyState.Chasing;
+    public Enemy Enemy => GetParent<Enemy>();
 }
