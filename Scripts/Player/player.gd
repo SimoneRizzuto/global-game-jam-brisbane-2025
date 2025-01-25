@@ -50,7 +50,7 @@ func _physics_process(delta):
 	var movement_dir = cameraArm.global_transform.basis * Vector3(propulsion.x * strafeMod, 0, propulsion.y)
 	
 	var strafeVertical = Input.get_axis("down","up")
-	movement_dir += Vector3(0, strafeVertical, 0) * strafeMod
+	movement_dir += Vector3(0, strafeVertical, 0)
 	
 	if Input.is_action_pressed("dash"):
 		dashing = true

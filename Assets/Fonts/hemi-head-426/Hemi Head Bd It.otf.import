@@ -1,0 +1,34 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://drurguk0ap2ah"
+path="res://.godot/imported/Hemi Head Bd It.otf-efcfb5fb00bf66da4b427868c55ade34.fontdata"
+
+[deps]
+
+source_file="res://Assets/Fonts/hemi-head-426/Hemi Head Bd It.otf"
+dest_files=["res://.godot/imported/Hemi Head Bd It.otf-efcfb5fb00bf66da4b427868c55ade34.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

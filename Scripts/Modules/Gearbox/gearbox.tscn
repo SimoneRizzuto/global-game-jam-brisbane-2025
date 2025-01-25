@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctpd4882wbpdx"]
+[gd_scene load_steps=3 format=3 uid="uid://ctpd4882wbpdx"]
 
 [ext_resource type="Script" path="res://Scripts/Modules/Gearbox/Gearbox.cs" id="1_8dana"]
+[ext_resource type="PackedScene" uid="uid://rtvkto5k2t5j" path="res://Scripts/UI/UI.tscn" id="2_qkiua"]
 
-[node name="Gearbox" type="Node2D"]
+[node name="Gearbox" type="Node"]
 script = ExtResource("1_8dana")
+
+[node name="UI" parent="." instance=ExtResource("2_qkiua")]
+size_flags_horizontal = 1
+size_flags_vertical = 1
