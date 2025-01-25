@@ -1,24 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://1rr0i2unh4sh"]
+[gd_scene load_steps=8 format=3 uid="uid://1rr0i2unh4sh"]
 
 [ext_resource type="Script" path="res://Scripts/MessageBubble/MessageBubble.cs" id="1_g3gi1"]
+[ext_resource type="FontFile" uid="uid://chhpjakeimqw0" path="res://Assets/Fonts/ethnocentric/Ethnocentric Rg It.otf" id="2_itw40"]
+[ext_resource type="Script" path="res://Scenes/MessageBubble/FacePlayer.gd" id="2_oons2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f5sq1"]
-radius = 0.393503
+radius = 0.657524
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li0u1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e84d2"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_46sfs"]
 
 [node name="MessageBubble" type="Node3D"]
-transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_g3gi1")
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.700843, 0, 0, 0, 0.700843, 0, 0, 0, 0.700843, 0, 0, 0)
+transform = Transform3D(8.756, 0, 0, 0, 8.756, 0, 0, 0, 8.756, 0, 0, 0)
 shape = SubResource("SphereShape3D_f5sq1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.56, 1.49012e-08, 0, -1.49012e-08, 0.56, 0, 0, 0, 0.56, 0, 0, 0)
+transform = Transform3D(2.5, 6.65232e-08, 0, -6.65232e-08, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_li0u1")
+material_overlay = SubResource("StandardMaterial3D_e84d2")
 mesh = SubResource("SphereMesh_46sfs")
 
+[node name="MessageInBubble" type="Node3D" parent="."]
+visible = false
+script = ExtResource("2_oons2")
+
+[node name="Label" type="Label3D" parent="MessageInBubble"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "omg. so my best friend Taylor told me that her sister Lez told her that her boyfriend John told her that Jordan thinks 
+i am a poser and fake. that's not true!!!!"
+font = ExtResource("2_itw40")
+font_size = 18
+outline_size = 0
+autowrap_mode = 2
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="MessageInBubble" method="_on_area_3d_body_entered"]

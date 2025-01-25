@@ -44,6 +44,17 @@ func _ready():
 	
 
 func _physics_process(delta):
+	if gearbox.paused:
+		if Input.is_action_just_pressed("Pause"):
+			gearbox.paused = false;
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		else:
+			return
+	
+	elif Input.is_action_just_pressed("Pause"):
+		gearbox.paused = true;
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		return
 	
 	var propulsion = Input.get_vector("left", "right", "forward", "back")
 	

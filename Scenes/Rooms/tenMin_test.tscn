@@ -1,0 +1,224 @@
+[gd_scene load_steps=20 format=3 uid="uid://bskijcu8p72f4"]
+
+[ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_1b546"]
+[ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="2_cxkuf"]
+[ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="3_qjedl"]
+[ext_resource type="Texture2D" uid="uid://cf5wklwulr3oj" path="res://Assets/Textures/autumn_field_puresky_1k.hdr" id="4_4amk0"]
+[ext_resource type="Script" path="res://Assets/FogController.cs" id="5_fdg2p"]
+[ext_resource type="Material" uid="uid://dnubkdpewcryp" path="res://Assets/Materials/water.tres" id="6_jpufq"]
+[ext_resource type="PackedScene" uid="uid://dyy8stvo1u7vi" path="res://Assets/Shapes/Gwubluhbluh.blend" id="7_x7erw"]
+[ext_resource type="Material" uid="uid://cn5q4r1r0s01k" path="res://Assets/Materials/metal.tres" id="8_8ijww"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tq82c"]
+radius = 0.1
+height = 0.1
+radial_segments = 4
+rings = 4
+
+[sub_resource type="Curve" id="Curve_vn56e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.498952, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iyxjg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pqxi"]
+albedo_color = Color(0, 0.207017, 0.207112, 1)
+emission_enabled = true
+emission = Color(0.274003, 0.659443, 0.786907, 1)
+emission_energy_multiplier = 0.82
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyd1n"]
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.15
+
+[sub_resource type="FogMaterial" id="FogMaterial_sbrg8"]
+density = 0.1806
+albedo = Color(0.121955, 0.240835, 0.39837, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vp14f"]
+panorama = ExtResource("4_4amk0")
+energy_multiplier = 1.75
+
+[sub_resource type="Sky" id="Sky_eyu0t"]
+sky_material = SubResource("PanoramaSkyMaterial_vp14f")
+
+[sub_resource type="Environment" id="Environment_v6avm"]
+background_mode = 2
+sky = SubResource("Sky_eyu0t")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.06
+tonemap_exposure = 1.58
+ssao_radius = 64.5
+ssao_intensity = 16.0
+ssao_power = 2.12132
+ssao_detail = 0.3
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.55
+sdfgi_cascades = 2
+sdfgi_min_cell_size = 0.5
+sdfgi_energy = 1.19
+glow_enabled = true
+fog_mode = 1
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 1.45
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = -41.12
+fog_depth_begin = 0.0
+fog_depth_end = 208.8
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_emission = Color(0.860369, 0.860369, 0.860369, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_length = 32.0
+volumetric_fog_ambient_inject = 0.13
+adjustment_brightness = 1.04
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o6pm1"]
+auto_exposure_enabled = true
+auto_exposure_scale = 0.66
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mlwnf"]
+
+[node name="Movement Test" type="Node3D"]
+transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_1b546")]
+transform = Transform3D(1, 1.09139e-11, -1.16415e-10, -4.54747e-13, 1, 2.32831e-10, 1.16415e-10, -2.32831e-10, 1, 2.72848e-12, -0.972226, 0)
+wall_min_slide_angle = 0.0
+
+[node name="Camera3D" parent="Player/CameraArm" index="0"]
+environment = null
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Player/CameraArm/Camera3D" index="1"]
+transform = Transform3D(1, 2.13731e-11, 0, -6.82121e-12, 1, 0, 1.16415e-10, 0, 1, 0.00147586, 0.00339723, -0.948269)
+amount = 8000
+lifetime = 2.5
+lifetime_randomness = 0.3
+mesh = SubResource("SphereMesh_tq82c")
+emission_shape = 1
+emission_sphere_radius = 50.0
+particle_flag_align_y = true
+gravity = Vector3(0, -0.001, 0)
+initial_velocity_max = 0.01
+scale_amount_min = 0.01
+scale_amount_max = 0.02
+scale_amount_curve = SubResource("Curve_vn56e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, -1.74623e-10, 0, 4.07454e-10, 100, 5.96046e-08, 5.96046e-08, 0, 100, 0.0202925, 0.094276, 0.0579107)
+visible = false
+mesh = SubResource("PlaneMesh_iyxjg")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_0pqxi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, -2.04636e-11, 3.49246e-10, 2.86491e-11, -1, 8.77772e-08, 3.49246e-10, -8.77772e-08, -1, -0.000708234, -0.000824975, -0.000802633)
+visible = false
+mesh = SubResource("PlaneMesh_iyxjg")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_kyd1n")
+
+[node name="MessageBubble" parent="." instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
+
+[node name="Big shapes yahoo" parent="." instance=ExtResource("3_qjedl")]
+transform = Transform3D(1.18766, 0.000193469, -0.00184844, -0.000200102, 1.18766, -0.00425488, 0.00184774, 0.00425518, 1.18766, -7.05052, -32.3114, 18.7162)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.998233, -0.055598, -0.0209942, -0.0189693, -0.632862, 0.774031, -0.0563211, -0.772267, -0.632799, 0, 0, 0)
+light_energy = 2.241
+light_volumetric_fog_energy = 10.705
+shadow_enabled = true
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(0.999999, 0.000162899, -0.00155636, -0.000168484, 0.999993, -0.00358252, 0.00155578, 0.00358278, 0.999993, 0, -50.1, 0)
+size = Vector3(100, 100, 100)
+material = SubResource("FogMaterial_sbrg8")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v6avm")
+camera_attributes = SubResource("CameraAttributesPractical_o6pm1")
+script = ExtResource("5_fdg2p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, -6.0536e-09, -1.3113e-06, -4.00469e-08, 1000, 3.8147e-06, 1.3113e-06, -2.38419e-06, 1000, -6.90327e-06, -0.0423773, -0.000151831)
+material_override = ExtResource("6_jpufq")
+mesh = SubResource("PlaneMesh_mlwnf")
+skeleton = NodePath("../Gwubluhbluh")
+
+[node name="Gwubluhbluh" parent="." instance=ExtResource("7_x7erw")]
+transform = Transform3D(9.03956, -7.78142, 0.224985, 6.24749, 7.04585, -7.32392, 4.64436, 5.66747, 9.41406, -10.3789, -67.2474, 59.5296)
+
+[node name="TorusKnot" parent="Gwubluhbluh" index="0"]
+surface_material_override/0 = ExtResource("8_8ijww")
+
+[node name="TorusKnot_001" parent="Gwubluhbluh" index="1"]
+transform = Transform3D(-0.139112, -0.985537, -0.0967692, 0.913546, -0.165435, 0.371572, -0.382207, -0.0367128, 0.923347, 0.0853199, -0.0430713, 0.128884)
+surface_material_override/0 = ExtResource("8_8ijww")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="MessageBubble" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 0, -13.7261, 28.1773)
+Message = "hello? is this thing on? am I all alone? is anyone there? ... im all alone :("
+
+[node name="MessageBubble2" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 0, -16.3943, 13.4092)
+Message = "i am giovanni giorgia, but every1 calls me giorgia"
+
+[node name="MessageBubble3" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -11.7675, -23.489, 13.4092)
+Message = "Shower thoughts: do you think cats wanna play video games?"
+
+[node name="MessageBubble4" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -11.7675, -24.1304, 31.2697)
+Message = "Shower thoughts: i don't wash my legs in the shower. do you think people can smell that?"
+
+[node name="MessageBubble5" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -10.5986, -34.3883, 7.05946)
+Message = "here's a video of my cat licking its toes :3"
+
+[node name="MessageBubble6" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -19.1184, -35.2952, 15.9515)
+Message = "here's a video of my cat headbutting the camera :3"
+
+[node name="MessageBubble7" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, 5.37002, -41.6201, 26.905)
+Message = "I have my propeller hat on while San Diego burns. SEE YOU LATER, FIRES!"
+
+[node name="MessageBubble8" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -1.48449, -33.8173, 24.2011)
+Message = "hello? is this thing on? am I all alone? is anyone there? ... im all alone :("
+
+[node name="MessageBubble9" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -1.48449, -36.4856, 9.43299)
+Message = "i am giovanni giorgia, but every1 calls me giorgia"
+
+[node name="MessageBubble10" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -17.9178, -43.6642, 9.86974)
+Message = ":3"
+
+[node name="MessageBubble11" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -17.9178, -44.3056, 27.7302)
+Message = ":3"
+
+[node name="MessageBubble12" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -16.749, -54.5635, 3.51999)
+Message = ":3"
+
+[node name="MessageBubble13" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -25.2688, -55.4704, 12.4121)
+Message = ":3"
+
+[node name="MessageBubble14" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -0.78037, -61.7953, 23.3655)
+Message = ":3"
+
+[node name="MessageBubble15" parent="Node" instance=ExtResource("2_cxkuf")]
+transform = Transform3D(0.892263, 0.451516, 0, -0.451516, 0.892263, 0, 0, 0, 1, -15.4317, -62.9476, 22.3778)
+Message = ":3"
+
+[editable path="Player"]
+[editable path="Gwubluhbluh"]
+[editable path="Node/MessageBubble2"]

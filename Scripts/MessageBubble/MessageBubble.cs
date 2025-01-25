@@ -17,7 +17,7 @@ public partial class MessageBubble : Node3D
 			// trigger dialogue UI, pass in Message and ProfilePicPath
 			
 			GD.Print("trigger message display");
-			Gearbox.instance.GetMessage(Message, ProfilePicPath);
+			//Gearbox.instance.GetMessage(Message, ProfilePicPath);
 			return;
 		}
 	}
