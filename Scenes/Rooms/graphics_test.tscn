@@ -80,7 +80,7 @@ adjustment_brightness = 1.04
 transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_dpq2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.972226, 0)
+transform = Transform3D(1, 1.09139e-11, -1.16415e-10, -4.54747e-13, 1, 2.32831e-10, 1.16415e-10, -2.32831e-10, 1, 2.72848e-12, -0.972226, 0)
 wall_min_slide_angle = 0.0
 
 [node name="Camera3D" parent="Player/CameraArm" index="0"]
