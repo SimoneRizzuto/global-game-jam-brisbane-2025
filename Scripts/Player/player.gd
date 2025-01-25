@@ -34,7 +34,8 @@ var FOVShift = 1.0
 
 #oxygen Management
 var oxygenDrain = 0.5
-var oxygenRefil = 10
+var oxygenRefil = 30
+var dashOxygenDrain = 4
 
 
 func _ready():
@@ -53,6 +54,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("dash"):
 		dashing = true
 		movement_dir += cameraArm.global_transform.basis * Vector3(0, 0, -dashSpeed)
+		gearbox.oxygen -= delta * oxygenDrain
 	else:
 		dashing = false
 	
@@ -89,6 +91,7 @@ func surface_and_descent(delta):
 	else:
 		if abs(targetVel.y) != 0:
 			velocity.y = lerpf(velocity.y, targetVel.y, accel*delta)
+			gearbox.oxygen -= delta * oxygenDrain
 		else:
 			if  global_position.y > bobPoint:
 				velocity.y = lerpf(velocity.y, 0, friction*delta)
@@ -118,4 +121,4 @@ func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		cameraArm.rotate_x(-event.relative.y * mouse_sensitivity)
-		#camera.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+		cameraArm.rotation.x = clampf(cameraArm.rotation.x, -deg_to_rad(90), deg_to_rad(90))

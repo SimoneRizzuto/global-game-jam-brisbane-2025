@@ -7,6 +7,7 @@ radius = 0.338461
 
 [sub_resource type="Environment" id="Environment_khkev"]
 background_mode = 1
+ambient_light_source = 2
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_o7dw6")
@@ -20,6 +21,9 @@ shape = SubResource("SphereShape3D_ar15u")
 environment = SubResource("Environment_khkev")
 fov = 37.8493
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CameraArm"]
-spot_range = 7.0
-spot_angle = 30.0
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraArm/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00699925, -0.00780427, 0.00868082)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(9.62615e-07, 0.478015, 0.480114, 1)
+omni_range = 200.0
