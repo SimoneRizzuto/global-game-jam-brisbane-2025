@@ -6,6 +6,6 @@ namespace GGJ2025.Scripts.Modules.Enemies;
 [GlobalClass]
 public partial class EnemyPatrollingModule : Node
 {
-    public EnemyStateMachine StateMachine => GetParent().GetParent<EnemyStateMachine>();
+    public EnemyStateMachine State => GetParent().GetParent<EnemyStateMachine>();
     
 }
