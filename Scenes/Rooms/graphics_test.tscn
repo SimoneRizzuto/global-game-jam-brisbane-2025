@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://snqgfih6crsp"]
+[gd_scene load_steps=24 format=3 uid="uid://snqgfih6crsp"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cf5wklwulr3oj" path="res://Assets/Textures/autumn_field_puresky_1k.hdr" id="5_s3clf"]
 [ext_resource type="PackedScene" uid="uid://dyy8stvo1u7vi" path="res://Assets/Shapes/Gwubluhbluh.blend" id="6_8jrnu"]
 [ext_resource type="Material" uid="uid://cn5q4r1r0s01k" path="res://Assets/Materials/metal.tres" id="7_ykjt3"]
+[ext_resource type="Material" uid="uid://cr5r7rmcrbiwn" path="res://Assets/Materials/bubble.tres" id="9_88wvj"]
+[ext_resource type="PackedScene" uid="uid://dumwv1c1m4n28" path="res://Assets/Shapes/Pipes.blend" id="10_quisa"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tq82c"]
 radius = 0.1
@@ -32,7 +34,7 @@ emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.15
 
 [sub_resource type="FogMaterial" id="FogMaterial_sbrg8"]
-density = 0.1806
+density = 0.3032
 albedo = Color(0.121955, 0.240835, 0.39837, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vp14f"]
@@ -48,14 +50,18 @@ sky = SubResource("Sky_eyu0t")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 1.06
 tonemap_exposure = 1.58
+ssr_max_steps = 32
+ssr_fade_out = 1.23114
+ssr_depth_tolerance = 86.31
 ssao_radius = 64.5
 ssao_intensity = 16.0
 ssao_power = 2.12132
 ssao_detail = 0.3
-sdfgi_enabled = true
-sdfgi_bounce_feedback = 0.55
-sdfgi_cascades = 2
-sdfgi_min_cell_size = 0.5
+sdfgi_bounce_feedback = 1.07
+sdfgi_cascades = 3
+sdfgi_min_cell_size = 0.888477
+sdfgi_cascade0_distance = 56.8625
+sdfgi_max_distance = 454.9
 sdfgi_energy = 1.19
 glow_enabled = true
 fog_mode = 1
@@ -77,8 +83,13 @@ adjustment_brightness = 1.04
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o6pm1"]
 auto_exposure_enabled = true
 auto_exposure_scale = 0.66
+auto_exposure_speed = 0.75
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mlwnf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4ug55"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sfalm"]
 
 [node name="Movement Test" type="Node3D"]
 transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
@@ -126,14 +137,14 @@ transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0
 transform = Transform3D(1.18766, 0.000193469, -0.00184844, -0.000200102, 1.18766, -0.00425488, 0.00184774, 0.00425518, 1.18766, -7.05052, -32.3114, 18.7162)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.998233, -0.055598, -0.0209942, -0.0189693, -0.632862, 0.774031, -0.0563211, -0.772267, -0.632799, 0, 0, 0)
+transform = Transform3D(-0.90846, -0.301102, -0.289891, 0.0497748, -0.766569, 0.640229, -0.414996, 0.567194, 0.711386, 0, 0, 0)
 light_energy = 2.241
 light_volumetric_fog_energy = 10.705
 shadow_enabled = true
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(0.999999, 0.000162899, -0.00155636, -0.000168484, 0.999993, -0.00358252, 0.00155578, 0.00358278, 0.999993, 0, -50.1, 0)
-size = Vector3(100, 100, 100)
+size = Vector3(1000, 100, 1000)
 material = SubResource("FogMaterial_sbrg8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -142,13 +153,13 @@ camera_attributes = SubResource("CameraAttributesPractical_o6pm1")
 script = ExtResource("5_2u51d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1000, -6.0536e-09, -1.3113e-06, -4.00469e-08, 1000, 3.8147e-06, 1.3113e-06, -2.38419e-06, 1000, -6.90327e-06, -0.0423773, -0.000151831)
+transform = Transform3D(1000, -5.58794e-09, -1.43051e-06, -5.54137e-08, 1000, 4.52995e-06, 1.43051e-06, -2.6226e-06, 1000, -6.90327e-06, -0.0423773, -0.000151831)
 material_override = ExtResource("5_fead7")
 mesh = SubResource("PlaneMesh_mlwnf")
 skeleton = NodePath("../Gwubluhbluh")
 
 [node name="Gwubluhbluh" parent="." instance=ExtResource("6_8jrnu")]
-transform = Transform3D(9.03956, -7.78142, 0.224985, 6.24749, 7.04585, -7.32392, 4.64436, 5.66747, 9.41406, -10.3789, -67.2474, 59.5296)
+transform = Transform3D(5.73231, -7.80999, 6.96128, 7.41079, -2.57181, -8.98782, 7.38483, 8.64318, 3.61587, -10.3789, -67.2474, 59.5296)
 
 [node name="TorusKnot" parent="Gwubluhbluh" index="0"]
 surface_material_override/0 = ExtResource("7_ykjt3")
@@ -156,6 +167,59 @@ surface_material_override/0 = ExtResource("7_ykjt3")
 [node name="TorusKnot_001" parent="Gwubluhbluh" index="1"]
 transform = Transform3D(-0.139112, -0.985537, -0.0967692, 0.913546, -0.165435, 0.371572, -0.382207, -0.0367128, 0.923347, 0.0853199, -0.0430713, 0.128884)
 surface_material_override/0 = ExtResource("7_ykjt3")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(15.2807, 1.04046e-09, -2.23517e-08, -1.68802e-09, 15.2807, 5.21541e-08, 4.09782e-08, -2.6077e-08, 15.2807, -18.7352, -24.5717, 83.4055)
+mesh = SubResource("SphereMesh_4ug55")
+surface_material_override/0 = ExtResource("9_88wvj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D"]
+shape = SubResource("SphereShape3D_sfalm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.36703, 4.94765e-10, -1.49012e-08, -7.34872e-10, 5.36704, 3.1665e-08, 2.23517e-08, -1.11759e-08, 5.36703, -2.383, -41.7575, 52.0725)
+mesh = SubResource("SphereMesh_4ug55")
+surface_material_override/0 = ExtResource("9_88wvj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D"]
+shape = SubResource("SphereShape3D_sfalm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.07269, 2.51021e-10, -9.31323e-09, -4.96584e-10, 3.07269, 1.95578e-08, 1.35042e-08, -7.45058e-09, 3.07269, -0.775807, -35.6982, 24.4598)
+mesh = SubResource("SphereMesh_4ug55")
+surface_material_override/0 = ExtResource("9_88wvj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D8/StaticBody3D"]
+shape = SubResource("SphereShape3D_sfalm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.0882, 5.27507e-10, -2.42144e-08, -1.4843e-09, 7.08821, 5.02914e-08, 3.44589e-08, -1.86265e-08, 7.0882, -8.74144, -33.8293, 18.7541)
+mesh = SubResource("SphereMesh_4ug55")
+surface_material_override/0 = ExtResource("9_88wvj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D9/StaticBody3D"]
+shape = SubResource("SphereShape3D_sfalm")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(14.4438, 2.40107e-09, -5.7742e-08, -4.22733e-09, 14.4438, 1.2666e-07, 8.19564e-08, -2.6077e-08, 14.4438, 16.9608, -48.5013, 4.03088)
+mesh = SubResource("SphereMesh_4ug55")
+surface_material_override/0 = ExtResource("9_88wvj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D10/StaticBody3D"]
+shape = SubResource("SphereShape3D_sfalm")
+
+[node name="Pipes" parent="." instance=ExtResource("10_quisa")]
+transform = Transform3D(37.1342, 0.00604913, -0.0577945, -0.00625649, 37.134, -0.133035, 0.0577723, 0.133045, 37.134, -280.06, -617.158, 127.16)
 
 [editable path="Player"]
 [editable path="Gwubluhbluh"]
