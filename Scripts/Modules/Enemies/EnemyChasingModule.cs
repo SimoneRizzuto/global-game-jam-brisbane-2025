@@ -1,3 +1,4 @@
+using System;
 using GGJ2025.Scripts.Enemies;
 using GGJ2025.Scripts.Helpers;
 using GGJ2025.Scripts.StateMachines;
@@ -15,7 +16,7 @@ public partial class EnemyChasingModule : Node
     {
         if (State?.EnemyState != EnemyState.Chasing) return;
         
-        var movementVector = State.Enemy.Position.DirectionTo(Player.Position);
-        State.Enemy.CalculatedVelocity = movementVector * Enemy.MoveSpeed;
+        var movementVector = State.Enemy.GlobalPosition.DirectionTo(Player.GlobalPosition);
+        State.Enemy.CalculatedVelocity = movementVector * State.Enemy.ChaseMoveSpeed;
     }
 }
