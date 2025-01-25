@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var gearbox = get_parent().get_parent().get_node("Gearbox")
 
 #physics/movement variables
 var speed = 0.7
@@ -8,6 +9,7 @@ var mouse_sensitivity = 0.001
 var accel = 5
 var friction = 0.95
 var targetVel = Vector3.ZERO
+var strafeMod = 0.3
 
 #systems for managing dashing
 var dashing = false
@@ -22,19 +24,31 @@ var bobPoint = -0.5
 
 #camera Systems
 @onready var cameraArm = $CameraArm
-@onready var cameraSpring = $CameraArm/SpringArm3D
 @onready var camera = $CameraArm/Camera3D
-var bobTime = 0
+var bobTime = 0.0
 var bobFrequency = 0.2
 var bobAmplitude = 0.1
+var baseFOV = 30.0
+var maxFOV = 45.0
+var FOVShift = 1.0
+
+#oxygen Management
+var oxygenDrain = 0.5
+var oxygenRefil = 10
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 
 func _physics_process(delta):
-	var input = Input.get_vector("left", "right", "forward", "back")
 	
-	var movement_dir = cameraArm.global_transform.basis * Vector3(input.x, 0, input.y)
+	var propulsion = Input.get_vector("left", "right", "forward", "back")
+	
+	var movement_dir = cameraArm.global_transform.basis * Vector3(propulsion.x * strafeMod, 0, propulsion.y)
+	
+	var strafeVertical = Input.get_axis("down","up")
+	movement_dir += Vector3(0, strafeVertical, 0) * strafeMod
 	
 	if Input.is_action_pressed("dash"):
 		dashing = true
@@ -71,14 +85,17 @@ func _physics_process(delta):
 func surface_and_descent(delta):
 	if global_position.y > surfacePoint:
 		velocity.y = lerpf(velocity.y, -fallSpeed, gravity*delta)
+		gearbox.oxygen += delta * oxygenRefil
 	else:
 		if abs(targetVel.y) != 0:
 			velocity.y = lerpf(velocity.y, targetVel.y, accel*delta)
 		else:
 			if  global_position.y > bobPoint:
 				velocity.y = lerpf(velocity.y, 0, friction*delta)
+				gearbox.oxygen += delta * oxygenRefil
 			else:
 				velocity.y = lerpf(velocity.y, -sinkSpeed, friction*delta)
+				gearbox.oxygen -= delta * oxygenDrain
 	
 	
 
@@ -89,12 +106,13 @@ func camera_bob(delta):
 	pos.y = sin(bobTime * bobFrequency) * bobAmplitude
 	pos.x = cos(bobTime * bobFrequency/2) * bobAmplitude
 	
-	camera.position = pos
+	#camera.position = pos
 	
 	#FOV
-	#var velocity_clamped = clamp(velocity.length(), 0.5, sprint_speed * 2)
-	#var target_fov = base_FOV + FOV_change * velocity_clamped
-	#cam.fov = lerp(cam.fov, target_fov, delta * 8.0)
+	if (dashing):
+		camera.fov = lerp(camera.fov, maxFOV, FOVShift * delta)
+	else:
+		camera.fov = lerp(camera.fov, baseFOV, FOVShift * delta)
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

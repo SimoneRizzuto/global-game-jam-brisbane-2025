@@ -11,8 +11,5 @@ public partial class Enemy : CharacterBody3D
 	{
 		Velocity = CalculatedVelocity * (float)delta;
 		MoveAndSlide();
-		
-		var roundedPosition = Position;
-		Position = roundedPosition;
 	}
 }

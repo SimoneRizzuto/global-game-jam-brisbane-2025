@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4ijjkkl6ag37"]
+[gd_scene load_steps=8 format=3 uid="uid://c4ijjkkl6ag37"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_8j1uk"]
-[ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="2_4cadg"]
-[ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_asygr"]
+[ext_resource type="Script" path="res://Scripts/OxygenLabelBasic.gd" id="2_shu23"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iyxjg"]
 
@@ -42,7 +41,7 @@ skeleton = NodePath("../../StaticBody3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_kyd1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(0.99324, 4.59295e-11, -1.16415e-10, -3.22871e-11, 0.99324, 4.65661e-10, 2.32831e-10, 4.65661e-10, 0.99324, -1.58838, -2.21321, -2.03261)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58838, -2.21321, -2.03261)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_tbyvx")
@@ -102,7 +101,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_4xvcd")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="."]
-transform = Transform3D(4.34682, -2.3655, 0.856027, 1.13885, 3.37425, 3.54128, -2.24309, -2.8709, 3.45684, -4.05956, -9.43884, -4.29997)
+transform = Transform3D(4.32754, -2.35501, 0.852231, 1.1338, 3.35929, 3.52558, -2.23314, -2.85817, 3.44151, -4.05956, -9.43884, -4.29997)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D7"]
 mesh = SubResource("BoxMesh_tbyvx")
@@ -130,9 +129,6 @@ offset_top = 8.0
 offset_right = 128.0
 offset_bottom = 31.0
 text = "100%"
-script = ExtResource("2_4cadg")
-
-[node name="MessageBubble" parent="." instance=ExtResource("3_asygr")]
-transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
+script = ExtResource("2_shu23")
 
 [editable path="Player"]

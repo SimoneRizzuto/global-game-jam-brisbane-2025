@@ -16,6 +16,6 @@ public partial class EnemyChasingModule : Node
         if (State.EnemyState != EnemyState.Chasing) return;
         
         var movementVector = State.Enemy.Position.DirectionTo(Player.Position);
-        State.Enemy.CalculatedVelocity = movementVector * Enemy.MoveSpeed * (float)delta;
+        State.Enemy.CalculatedVelocity = movementVector * Enemy.MoveSpeed;
     }
 }
