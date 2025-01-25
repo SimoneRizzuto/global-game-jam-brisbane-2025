@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270948, 0, -0.532626)
 curve = SubResource("Curve3D_hgvli")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.575313, 0, -0.817927, 0, 1, 0, 0.817927, 0, 0.575313, -7.75367, 0, -4.97982)
+transform = Transform3D(0.575321, 0, -0.817921, 0, 1, 0, 0.817921, 0, 0.575321, -7.75373, 0, -4.9798)
 progress = 34.25
 
 [node name="Enemy" parent="Path3D/PathFollow3D" instance=ExtResource("3_3c2y7")]
