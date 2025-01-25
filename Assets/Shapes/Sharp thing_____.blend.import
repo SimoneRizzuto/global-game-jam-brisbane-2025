@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< Updated upstream
 uid="uid://55xougw4vydg"
+=======
+uid="uid://biejks6koeidq"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Sharp thing_____.blend-c256f8359a506673b9952bea1e1da29d.scn"
 
 [deps]
