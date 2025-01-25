@@ -31,7 +31,70 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Plane": {
+"generate/physics": true
+},
+"PATH:Plane_001": {
+"generate/physics": true
+},
+"PATH:Plane_002": {
+"generate/physics": true
+},
+"PATH:Plane_003": {
+"generate/physics": true
+},
+"PATH:Plane_004": {
+"generate/physics": true
+},
+"PATH:Plane_005": {
+"generate/physics": true
+},
+"PATH:Plane_006": {
+"generate/physics": true
+},
+"PATH:Plane_007": {
+"generate/physics": true
+},
+"PATH:Plane_008": {
+"generate/physics": true
+},
+"PATH:Plane_009": {
+"generate/physics": true
+},
+"PATH:Plane_010": {
+"generate/physics": true
+},
+"PATH:Plane_011": {
+"generate/physics": true
+},
+"PATH:Plane_012": {
+"generate/physics": true
+},
+"PATH:Plane_013": {
+"generate/physics": true
+},
+"PATH:Plane_014": {
+"generate/physics": true
+},
+"PATH:Plane_015": {
+"generate/physics": true
+},
+"PATH:Plane_016": {
+"generate/physics": true
+},
+"PATH:Plane_017": {
+"generate/physics": true
+},
+"PATH:Plane_018": {
+"generate/physics": true
+},
+"PATH:Plane_019": {
+"generate/physics": true
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
