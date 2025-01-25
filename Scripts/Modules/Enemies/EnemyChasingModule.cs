@@ -8,12 +8,12 @@ namespace GGJ2025.Scripts.Modules.Enemies;
 [GlobalClass]
 public partial class EnemyChasingModule : Node
 {
-    public EnemyStateMachine State => GetParent().GetParent<EnemyStateMachine>();
+    public EnemyStateMachine State => GetParent<EnemyStateMachine>();
     private CharacterBody3D Player => GetNodeHelper.GetPlayer(GetTree());
     
     public override void _Process(double delta)
     {
-        if (State.EnemyState != EnemyState.Chasing) return;
+        if (State?.EnemyState != EnemyState.Chasing) return;
         
         var movementVector = State.Enemy.Position.DirectionTo(Player.Position);
         State.Enemy.CalculatedVelocity = movementVector * Enemy.MoveSpeed;
