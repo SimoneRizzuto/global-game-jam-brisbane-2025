@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2bmdi1vlh4qm"]
+[gd_scene load_steps=4 format=3 uid="uid://c2bmdi1vlh4qm"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_o7dw6"]
 
@@ -7,8 +7,6 @@ radius = 0.338461
 
 [sub_resource type="Environment" id="Environment_khkev"]
 background_mode = 1
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_65f8b"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_o7dw6")
@@ -23,8 +21,5 @@ environment = SubResource("Environment_khkev")
 fov = 37.8493
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraArm"]
-spot_range = 7.5
+spot_range = 7.0
 spot_angle = 30.0
-
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraArm"]
-shape = SubResource("SphereShape3D_65f8b")

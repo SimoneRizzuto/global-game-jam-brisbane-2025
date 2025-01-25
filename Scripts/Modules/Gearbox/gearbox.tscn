@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctpd4882wbpdx"]
+
+[ext_resource type="Script" path="res://Scripts/Modules/Gearbox/Gearbox.cs" id="1_8dana"]
+
+[node name="Gearbox" type="Node2D"]
+script = ExtResource("1_8dana")
