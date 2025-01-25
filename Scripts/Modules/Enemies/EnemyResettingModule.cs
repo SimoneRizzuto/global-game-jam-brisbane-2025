@@ -15,7 +15,19 @@ public partial class EnemyResettingModule : Node
     {
         if (State?.EnemyState != EnemyState.Resetting) return;
         
-        var closestPoint = Path.Curve.GetClosestPoint(State.Enemy.Position);
-        Console.WriteLine(closestPoint);
+        var closestPoint = Path.Curve.GetClosestPoint(State.Enemy.GlobalPosition);
+        var movementVector = State.Enemy.GlobalPosition.DirectionTo(closestPoint);
+        State.Enemy.CalculatedVelocity = movementVector * State.Enemy.ChaseMoveSpeed;
+        
+        CheckDistanceToClosestPointOnCurve(closestPoint);
+    }
+    
+    private void CheckDistanceToClosestPointOnCurve(Vector3 closestPoint)
+    {
+        var distanceSquared = State.Enemy.GlobalPosition.DistanceTo(closestPoint);
+        if (distanceSquared < 0.5)
+        {
+            State.EnemyState = EnemyState.Patrolling;
+        }
     }
 }

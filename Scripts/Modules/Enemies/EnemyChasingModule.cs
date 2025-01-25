@@ -18,5 +18,16 @@ public partial class EnemyChasingModule : Node
         
         var movementVector = State.Enemy.GlobalPosition.DirectionTo(Player.GlobalPosition);
         State.Enemy.CalculatedVelocity = movementVector * State.Enemy.ChaseMoveSpeed;
+        
+        CheckDistanceToPlayer();
+    }
+
+    private void CheckDistanceToPlayer()
+    {
+        var distanceSquared = State.Enemy.GlobalPosition.DistanceTo(Player.GlobalPosition);
+        if (distanceSquared > 4)
+        {
+            State.EnemyState = EnemyState.Resetting;
+        }
     }
 }
