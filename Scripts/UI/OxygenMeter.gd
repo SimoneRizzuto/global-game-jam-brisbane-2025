@@ -7,5 +7,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#text = gearbox.oxygen + "%"
-	pass
+	text = str(snapped(gearbox.oxygen,0.1)) + "%"
