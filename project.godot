@@ -19,6 +19,10 @@ config/icon="res://Scripts/Static/icon.svg"
 
 Gearbox="*res://Scripts/Modules/Gearbox/gearbox.tscn"
 
+[display]
+
+window/size/mode=2
+
 [dotnet]
 
 project/assembly_name="GGJ2025"

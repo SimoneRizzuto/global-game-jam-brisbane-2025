@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://snqgfih6crsp"]
+[gd_scene load_steps=13 format=3 uid="uid://snqgfih6crsp"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
 [ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="2_q6vk3"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
 [ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="4_nxdla"]
-[ext_resource type="Texture2D" uid="uid://cdenwun4re8uk" path="res://Assets/Textures/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="5_vmnt7"]
+[ext_resource type="Texture2D" uid="uid://cf5wklwulr3oj" path="res://Assets/Textures/autumn_field_puresky_1k.hdr" id="5_s3clf"]
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_ky4o0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iyxjg"]
 
@@ -19,7 +21,7 @@ emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.15
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1eajp"]
-panorama = ExtResource("5_vmnt7")
+panorama = ExtResource("5_s3clf")
 
 [sub_resource type="Sky" id="Sky_eyu0t"]
 sky_material = SubResource("PanoramaSkyMaterial_1eajp")
@@ -28,13 +30,35 @@ sky_material = SubResource("PanoramaSkyMaterial_1eajp")
 background_mode = 2
 background_energy_multiplier = 1.06
 sky = SubResource("Sky_eyu0t")
-ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 1.06
+tonemap_exposure = 1.58
+ssao_radius = 64.5
+ssao_intensity = 16.0
+ssao_power = 2.12132
+ssao_detail = 0.3
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.55
+sdfgi_cascades = 3
+sdfgi_min_cell_size = 0.27
+sdfgi_cascade0_distance = 17.28
+sdfgi_max_distance = 138.24
+sdfgi_energy = 1.19
 glow_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 1.45
+fog_sun_scatter = 0.31
+fog_density = 1.0
+fog_height = -41.12
+fog_height_density = 0.257
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.004
-volumetric_fog_albedo = Color(0.323558, 0.526852, 0.723662, 1)
+volumetric_fog_density = 0.0963
+volumetric_fog_albedo = Color(0.133289, 0.300078, 0.451168, 1)
+volumetric_fog_emission = Color(0.860369, 0.860369, 0.860369, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_ambient_inject = 0.13
+adjustment_brightness = 1.04
 
 [node name="Movement Test" type="Node3D"]
 transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
@@ -44,6 +68,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.972226, 0)
 
 [node name="Camera3D" parent="Player/CameraArm" index="0"]
 environment = null
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Player/CameraArm/Camera3D" index="1"]
+amount = 500
+mesh = SubResource("PlaceholderMesh_ky4o0")
+emission_shape = 1
+emission_sphere_radius = 34.87
+particle_flag_align_y = true
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, -1.74623e-10, 0, 4.07454e-10, 100, 5.96046e-08, 5.96046e-08, 0, 100, 0.0202925, 0.094276, 0.0579107)
@@ -84,11 +115,13 @@ script = ExtResource("2_q6vk3")
 transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
 
 [node name="Big shapes yahoo" parent="." instance=ExtResource("4_nxdla")]
-transform = Transform3D(2.30809, 0.000375986, -0.00359224, -0.000388875, 2.30808, -0.00826888, 0.00359087, 0.00826947, 2.30808, -50.2819, -54.2979, 47.6467)
+transform = Transform3D(1.18766, 0.000193469, -0.00184844, -0.000200102, 1.18766, -0.00425488, 0.00184774, 0.00425518, 1.18766, -6.95154, -32.2568, 18.6937)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.999999, 0.000162899, -0.00155636, -0.000168483, 0.999993, -0.00358255, 0.00155577, 0.00358281, 0.999993, 0, 0, 0)
-light_energy = 5.333
+transform = Transform3D(0.998241, -0.0552406, -0.0215336, 0.00605408, -0.266326, 0.963864, -0.0589794, -0.962299, -0.265523, 0, 0, 0)
+light_energy = 16.0
+light_volumetric_fog_energy = 1.367
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6avm")
