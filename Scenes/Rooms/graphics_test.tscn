@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://snqgfih6crsp"]
+[gd_scene load_steps=12 format=3 uid="uid://snqgfih6crsp"]
 
 [ext_resource type="PackedScene" uid="uid://c2bmdi1vlh4qm" path="res://Scenes/Player/player.tscn" id="1_dpq2y"]
 [ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="2_q6vk3"]
 [ext_resource type="PackedScene" uid="uid://1rr0i2unh4sh" path="res://Scenes/MessageBubble/message_bubble.tscn" id="3_rtql8"]
 [ext_resource type="PackedScene" uid="uid://dupmxpnw8ua85" path="res://Assets/Shapes/Big shapes yahoo.blend" id="4_nxdla"]
+[ext_resource type="Texture2D" uid="uid://cdenwun4re8uk" path="res://Assets/Textures/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="5_vmnt7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iyxjg"]
 
@@ -17,7 +18,11 @@ emission_energy_multiplier = 0.82
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.15
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1eajp"]
+panorama = ExtResource("5_vmnt7")
+
 [sub_resource type="Sky" id="Sky_eyu0t"]
+sky_material = SubResource("PanoramaSkyMaterial_1eajp")
 
 [sub_resource type="Environment" id="Environment_v6avm"]
 background_mode = 2
@@ -28,16 +33,20 @@ ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 1.06
 glow_enabled = true
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.004
 volumetric_fog_albedo = Color(0.323558, 0.526852, 0.723662, 1)
 
 [node name="Movement Test" type="Node3D"]
 transform = Transform3D(0.999999, -0.000168474, 0.00155577, 0.000162908, 0.999994, 0.00358281, -0.00155636, -0.00358255, 0.999992, 0, 0, 0)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_dpq2y")]
-transform = Transform3D(1, 0, 0, 0, -0.015463, 0.99988, 0, -0.99988, -0.015463, 0, -0.972226, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.972226, 0)
+
+[node name="Camera3D" parent="Player/CameraArm" index="0"]
+environment = null
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, -1.74623e-10, 0, 5.23869e-10, 100, 2.98023e-08, 2.98023e-08, 0, 100, -0.000995783, -0.00846534, -0.00940466)
+transform = Transform3D(100, -1.74623e-10, 0, 4.07454e-10, 100, 5.96046e-08, 5.96046e-08, 0, 100, 0.0202925, 0.094276, 0.0579107)
 visible = false
 mesh = SubResource("PlaneMesh_iyxjg")
 skeleton = NodePath("")
@@ -75,7 +84,7 @@ script = ExtResource("2_q6vk3")
 transform = Transform3D(0.892188, 0.451661, -0.00155637, -0.451663, 0.892181, -0.00358255, -0.00022954, 0.00389926, 0.999992, -0.960273, -3.8254, 1.71041)
 
 [node name="Big shapes yahoo" parent="." instance=ExtResource("4_nxdla")]
-transform = Transform3D(2.30809, 0.000375986, -0.00359224, -0.000388875, 2.30808, -0.00826888, 0.00359087, 0.00826947, 2.30808, -50.5125, -54.9273, 47.5729)
+transform = Transform3D(2.30809, 0.000375986, -0.00359224, -0.000388875, 2.30808, -0.00826888, 0.00359087, 0.00826947, 2.30808, -50.2819, -54.2979, 47.6467)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.999999, 0.000162899, -0.00155636, -0.000168483, 0.999993, -0.00358255, 0.00155577, 0.00358281, 0.999993, 0, 0, 0)
