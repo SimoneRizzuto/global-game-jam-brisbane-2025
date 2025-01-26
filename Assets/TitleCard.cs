@@ -15,7 +15,7 @@ public partial class TitleCard : Control
 		subTitle.Text = subtitle;
 		visibleSubtitleCharacters = 0;
 
-		clearTime = 5f;
+		clearTime = 8f;
 	}
 
 	private float coolDown = 0.05f;
