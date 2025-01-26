@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=21 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
-[ext_resource type="Script" path="res://Scripts/UI/OxygenMeter.gd" id="3_qq2uk"]
 [ext_resource type="Script" path="res://Scenes/Rooms/message.gd" id="4_apoap"]
 [ext_resource type="Texture2D" uid="uid://cxsv75ykd1bt4" path="res://Assets/UI/UI_1.png" id="4_sl26s"]
 [ext_resource type="FontFile" uid="uid://d0r45t73xagkp" path="res://Assets/Fonts/terminal-dosis/TerminalDosis-ExtraLight.ttf" id="5_olmwa"]
 [ext_resource type="Texture2D" uid="uid://cra6ded602me7" path="res://Assets/UI/UI_2.png" id="7_0vekq"]
+[ext_resource type="Texture2D" uid="uid://dn6xd0no376st" path="res://Assets/UI/UI geen.png" id="7_8g3px"]
+[ext_resource type="Script" path="res://Scripts/UI/task_bar.gd" id="7_udu7d"]
+[ext_resource type="Texture2D" uid="uid://b1y2t7xuer7g5" path="res://Assets/UI/UI Red button.png" id="9_iwtv2"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -73,6 +75,94 @@ _data = {
 "SlideOutOfDms": SubResource("Animation_18xm2")
 }
 
+[sub_resource type="Animation" id="Animation_pttju"]
+resource_name = "OpenMenu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("TaskBar/Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TaskBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_i7qf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("TaskBar/Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TaskBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_x6273"]
+resource_name = "CloseMenu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("TaskBar/Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TaskBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r41nn"]
+_data = {
+"CloseMenu": SubResource("Animation_x6273"),
+"OpenMenu": SubResource("Animation_pttju"),
+"RESET": SubResource("Animation_i7qf2")
+}
+
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -80,12 +170,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_7un6y")
 
 [node name="OxygenMeter" type="Control" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="OxygenMeter"]
 layout_mode = 1
@@ -99,9 +191,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3axs8")
 text = "100.0"
 vertical_alignment = 1
 autowrap_mode = 2
-script = ExtResource("3_qq2uk")
 
 [node name="Message" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -110,6 +202,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 script = ExtResource("4_apoap")
 
 [node name="TextContainer" type="ColorRect" parent="Message"]
@@ -118,6 +211,7 @@ offset_left = 20.0
 offset_top = -376.0
 offset_right = 264.0
 offset_bottom = 8.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.172549)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Message/TextContainer"]
@@ -126,7 +220,7 @@ offset_left = 14.0
 offset_top = 8.0
 offset_right = 240.0
 offset_bottom = 336.0
-mouse_filter = 1
+mouse_filter = 2
 theme = SubResource("Theme_2fmah")
 text = "omg. so my best friend Taylor told me that her sister Lez told her that her boyfriend John told her that Jordan thinks 
 i am a poser and fake. that's not true!!!!"
@@ -141,6 +235,7 @@ offset_top = -48.0
 offset_right = 4618.0
 offset_bottom = 1094.0
 scale = Vector2(-0.065, 0.065)
+mouse_filter = 2
 texture = ExtResource("4_sl26s")
 stretch_mode = 2
 
@@ -152,6 +247,7 @@ offset_top = 336.0
 offset_right = 4346.0
 offset_bottom = 1478.0
 scale = Vector2(0.075, 0.075)
+mouse_filter = 2
 texture = ExtResource("7_0vekq")
 stretch_mode = 2
 
@@ -159,3 +255,108 @@ stretch_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_2c4tf")
 }
+
+[node name="TaskBar" type="Control" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -648.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("7_udu7d")
+
+[node name="Control" type="Control" parent="TaskBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -648.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 648)
+mouse_filter = 2
+
+[node name="Green" type="TextureRect" parent="TaskBar/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -142.0
+offset_right = 3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("7_8g3px")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Red" type="TextureRect" parent="TaskBar/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -142.0
+offset_right = 3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("9_iwtv2")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="ButtonContainer" type="TextureRect" parent="TaskBar/Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -142.0
+offset_right = 3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("9_iwtv2")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="OffButton" type="Control" parent="TaskBar/Control/ButtonContainer"]
+z_index = 1
+custom_minimum_size = Vector2(11.835, 0)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -151.152
+offset_right = 146.0
+offset_bottom = -0.152283
+grow_vertical = 0
+pivot_offset = Vector2(0, 143)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r41nn")
+}
+
+[connection signal="mouse_entered" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_entered"]
+[connection signal="mouse_exited" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_exited"]

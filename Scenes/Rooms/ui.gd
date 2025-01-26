@@ -2,6 +2,7 @@ extends Control
 
 @onready var messageDisplay = $Message
 
+@onready var anim = $AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -13,3 +14,9 @@ func _process(delta):
 
 func Get_Message(message, imagePath):
 	messageDisplay.newMessage(message, imagePath)
+
+func Pause():
+	anim.play("OpenMenu")
+
+func UnPause():
+	anim.play("CloseMenu")

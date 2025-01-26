@@ -7,10 +7,14 @@ public partial class Gearbox : Node
 	public static Gearbox instance = null;
 
 	public Node UI;
+
 	public bool paused = false;
+	public bool start = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		start = true;
+		
 		if (Gearbox.instance == null)
         {
 			Gearbox.instance = this;
@@ -20,12 +24,26 @@ public partial class Gearbox : Node
 			this.QueueFree();
 		}
 		UI = FindChild("UI");
+		Pause();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 
+	}
+
+	public void Pause()
+    {
+		paused = true;
+		UI.Call("Pause");
+
+	}
+	public void Unpause()
+	{
+		paused = false;
+		start = false;
+		UI.Call("UnPause");
 	}
 
 	public void GetMessage(string message, string imagePath)
