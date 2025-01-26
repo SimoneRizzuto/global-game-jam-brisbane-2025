@@ -3,7 +3,7 @@ extends TextureRect
 @export var nonIcon = true
 
 @onready var img = $IconImg
-
+@onready var UI = get_parent().get_parent().get_parent()
 var MaxScale = 1.1
 var minScale = 0.9
 
@@ -49,8 +49,17 @@ func _unhandled_input(event):
 					if type == "Credits":
 						get_parent().get_node("Credits").visible = true
 					elif type == "Play":
-						get_parent().get_parent().get_parent().get_parent().Unpause()
+						UI.get_parent().Unpause()
 						Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+					elif type == "ScreenShot":
+						ScreenShot()
+
+func ScreenShot():
+	UI.visible = false
+	await get_tree().create_timer(0.05).timeout
+	var image = get_viewport().get_texture().get_image()
+	image.save_png("res://Screenshots/" + str(Time.get_ticks_msec()) + "_screenshot.png")
+	UI.visible = true
 
 func _on_selection_mouse_entered():
 	if !hovered:

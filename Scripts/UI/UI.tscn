@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=29 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://bccnlc44hri54" path="res://Assets/UI/Camera Icon.png" id="11_0ffur"]
 [ext_resource type="Texture2D" uid="uid://hjuam0kqa1oo" path="res://Assets/UI/Millenium Icon.png" id="12_i5su6"]
 [ext_resource type="Script" path="res://Scripts/UI/credits.gd" id="12_k16yb"]
+[ext_resource type="FontFile" uid="uid://35cfba05e4rg" path="res://Assets/Fonts/flexi-ibm-vga-true/Flexi_IBM_VGA_True.ttf" id="13_x5x1a"]
+[ext_resource type="Texture2D" uid="uid://c25yoij3p2rsj" path="res://Assets/UI/Fish.png" id="14_iihwv"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -79,6 +81,10 @@ _data = {
 "SlideIntoDms": SubResource("Animation_gkvns"),
 "SlideOutOfDms": SubResource("Animation_18xm2")
 }
+
+[sub_resource type="Theme" id="Theme_h1ahq"]
+default_font = ExtResource("13_x5x1a")
+default_font_size = 32
 
 [sub_resource type="Animation" id="Animation_pttju"]
 resource_name = "OpenMenu"
@@ -459,6 +465,7 @@ layout_mode = 1
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 1072.0
+scale = Vector2(0.655, 0.655)
 pivot_offset = Vector2(0, 648)
 mouse_filter = 2
 
@@ -486,7 +493,6 @@ offset_right = 192.0
 offset_bottom = 256.0
 
 [node name="Credits" type="TextureRect" parent="Icons/Control"]
-visible = false
 layout_mode = 1
 offset_left = 1120.0
 offset_top = 128.0
@@ -511,12 +517,35 @@ pivot_offset = Vector2(0, 143)
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 
+[node name="Label" type="Label" parent="Icons/Control/Credits"]
+layout_mode = 0
+offset_left = 199.084
+offset_top = 153.588
+offset_right = 727.084
+offset_bottom = 186.588
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tex Barnes (neighbourhoodsnake.com)"
+
+[node name="Label2" type="Label" parent="Icons/Control/Credits"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 68.0
+offset_right = 493.0
+offset_bottom = 101.0
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lemon (@simplylemonart.bsky.social)"
+horizontal_alignment = 2
+
 [node name="Camera" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 352.0
 offset_right = 240.0
 offset_bottom = 541.338
+nonIcon = false
+type = "ScreenShot"
 
 [node name="IconImg" parent="Icons/Control/Camera" index="0"]
 offset_right = 160.0
@@ -532,14 +561,40 @@ offset_left = -32.0
 offset_top = 184.0
 offset_right = 211.0
 offset_bottom = 240.0
-text = "Take_ScreenCap.exe"
+text = "Screenshot.exe"
+
+[node name="Fish" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+layout_mode = 0
+offset_left = 73.2824
+offset_top = 599.145
+offset_right = 241.282
+offset_bottom = 788.483
+
+[node name="IconImg" parent="Icons/Control/Fish" index="0"]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 224.0
+offset_bottom = 232.0
+texture = ExtResource("14_iihwv")
+
+[node name="Selection" parent="Icons/Control/Fish" index="1"]
+offset_left = -32.0
+offset_right = 224.0
+offset_bottom = 200.0
+
+[node name="Label" parent="Icons/Control/Fish" index="2"]
+offset_left = -32.0
+offset_top = 184.0
+offset_right = 211.0
+offset_bottom = 240.0
+text = "Fish.png"
 
 [node name="PlayGame" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 600.0
-offset_right = 232.0
-offset_bottom = 760.0
+offset_left = 73.2824
+offset_top = 855.634
+offset_right = 233.282
+offset_bottom = 1015.63
 texture = ExtResource("12_i5su6")
 nonIcon = false
 type = "Play"
@@ -572,4 +627,5 @@ libraries = {
 
 [editable path="Icons/Control/CreditsCallObject"]
 [editable path="Icons/Control/Camera"]
+[editable path="Icons/Control/Fish"]
 [editable path="Icons/Control/PlayGame"]
