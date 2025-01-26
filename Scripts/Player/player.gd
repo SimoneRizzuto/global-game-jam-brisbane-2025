@@ -46,7 +46,8 @@ var initialSink = 0.0
 var initialSpeed = 0.0
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	initialDash = dashSpeed
 	initialSink = sinkSpeed
 	initialSpeed = speed
