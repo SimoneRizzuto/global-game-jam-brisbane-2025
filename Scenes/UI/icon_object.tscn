@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2pp6omxf4l6h"]
+
+[ext_resource type="Texture2D" uid="uid://doh46hqhmwcl5" path="res://Assets/UI/Recycle Icon.png" id="1_q7eqk"]
+[ext_resource type="Script" path="res://Scripts/UI/IconHover.gd" id="2_slcoj"]
+[ext_resource type="FontFile" uid="uid://ccoe2kibplgrd" path="res://Assets/Fonts/flexi-ibm-vga-true/Flexi_IBM_VGA_True_437.ttf" id="3_4tpe6"]
+
+[sub_resource type="Theme" id="Theme_habp5"]
+default_font = ExtResource("3_4tpe6")
+default_font_size = 32
+
+[node name="IconObject" type="TextureRect"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 272.0
+offset_bottom = 216.0
+pivot_offset = Vector2(116, 88)
+mouse_filter = 2
+texture = ExtResource("1_q7eqk")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("2_slcoj")
+
+[node name="IconImg" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 232.0
+offset_bottom = 176.0
+pivot_offset = Vector2(116, 88)
+mouse_filter = 2
+texture = ExtResource("1_q7eqk")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Selection" type="Control" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(11.835, 0)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 0
+offset_right = 232.0
+offset_bottom = 176.0
+pivot_offset = Vector2(0, 143)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 272.0
+offset_right = 224.0
+offset_bottom = 328.0
+theme = SubResource("Theme_habp5")
+text = "Credits.txt"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Selection" to="." method="_on_selection_mouse_entered"]
+[connection signal="mouse_exited" from="Selection" to="." method="_on_selection_mouse_exited"]

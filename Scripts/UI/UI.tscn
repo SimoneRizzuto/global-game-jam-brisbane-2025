@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=34 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
@@ -9,6 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://dn6xd0no376st" path="res://Assets/UI/UI geen.png" id="7_8g3px"]
 [ext_resource type="Script" path="res://Scripts/UI/task_bar.gd" id="7_udu7d"]
 [ext_resource type="Texture2D" uid="uid://b1y2t7xuer7g5" path="res://Assets/UI/UI Red button.png" id="9_iwtv2"]
+[ext_resource type="Texture2D" uid="uid://v7jsdj6nw5u3" path="res://Assets/UI/Defenestration window.png" id="10_4qo74"]
+[ext_resource type="PackedScene" uid="uid://d2pp6omxf4l6h" path="res://Scenes/UI/icon_object.tscn" id="10_lnhh6"]
+[ext_resource type="Texture2D" uid="uid://bccnlc44hri54" path="res://Assets/UI/Camera Icon.png" id="11_0ffur"]
+[ext_resource type="Texture2D" uid="uid://hjuam0kqa1oo" path="res://Assets/UI/Millenium Icon.png" id="12_i5su6"]
+[ext_resource type="Script" path="res://Scripts/UI/credits.gd" id="12_k16yb"]
+[ext_resource type="Texture2D" uid="uid://wbsg6jiea3gg" path="res://Assets/Profile Pics/Creb.JPG" id="13_2csy2"]
+[ext_resource type="Texture2D" uid="uid://46q21r8qaop0" path="res://Assets/Profile Pics/KIBBYYY.JPG" id="13_arsut"]
+[ext_resource type="FontFile" uid="uid://35cfba05e4rg" path="res://Assets/Fonts/flexi-ibm-vga-true/Flexi_IBM_VGA_True.ttf" id="13_x5x1a"]
+[ext_resource type="Texture2D" uid="uid://c25yoij3p2rsj" path="res://Assets/UI/Fish.png" id="14_iihwv"]
+[ext_resource type="Texture2D" uid="uid://bjce11eap1u0p" path="res://Assets/Profile Pics/Blemon.JPG" id="15_x3lvw"]
+[ext_resource type="Texture2D" uid="uid://cwul0wyxgbvoa" path="res://Assets/Profile Pics/Yuppers.JPG" id="16_acmm8"]
+[ext_resource type="Texture2D" uid="uid://c4agrsfmhlj7d" path="res://Assets/Profile Pics/Snake.JPG" id="18_7ooed"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -75,16 +87,22 @@ _data = {
 "SlideOutOfDms": SubResource("Animation_18xm2")
 }
 
+[sub_resource type="Theme" id="Theme_h1ahq"]
+default_font = ExtResource("13_x5x1a")
+default_font_size = 48
+
 [sub_resource type="Animation" id="Animation_pttju"]
 resource_name = "OpenMenu"
+length = 0.5
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("TaskBar/Control:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 300), Vector2(0, 0)]
@@ -96,10 +114,34 @@ tracks/1/path = NodePath("TaskBar:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icons/Control:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-400, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_i7qf2"]
@@ -128,17 +170,43 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icons/Control:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icons:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_x6273"]
 resource_name = "CloseMenu"
+length = 0.5
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("TaskBar/Control:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 300)]
@@ -150,10 +218,46 @@ tracks/1/path = NodePath("TaskBar:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, false]
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icons/Control:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-400, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icons:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Icons/Control/Credits:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r41nn"]
@@ -345,13 +449,276 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -151.152
-offset_right = 146.0
-offset_bottom = -0.152283
+offset_top = -255.157
+offset_right = 250.0
+offset_bottom = -0.15744
 grow_vertical = 0
 pivot_offset = Vector2(0, 143)
 mouse_filter = 1
 mouse_default_cursor_shape = 2
+
+[node name="Icons" type="Control" parent="."]
+visible = false
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 0
+offset_bottom = 1080.0
+scale = Vector2(0.65, 0.65)
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Icons"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 1072.0
+pivot_offset = Vector2(0, 648)
+mouse_filter = 2
+
+[node name="CreditsCallObject" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 240.0
+offset_bottom = 261.338
+nonIcon = false
+type = "Credits"
+
+[node name="IconImg" parent="Icons/Control/CreditsCallObject" index="0"]
+offset_right = 168.0
+offset_bottom = 189.338
+
+[node name="Selection" parent="Icons/Control/CreditsCallObject" index="1"]
+offset_right = 160.0
+offset_bottom = 200.0
+
+[node name="Label" parent="Icons/Control/CreditsCallObject" index="2"]
+offset_left = -24.0
+offset_top = 200.0
+offset_right = 192.0
+offset_bottom = 256.0
+
+[node name="Credits" type="TextureRect" parent="Icons/Control"]
+visible = false
+layout_mode = 1
+offset_left = 1551.0
+offset_top = 111.0
+offset_right = 2906.0
+offset_bottom = 1246.0
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("10_4qo74")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="OffButton" type="Control" parent="Icons/Control/Credits"]
+z_index = 1
+custom_minimum_size = Vector2(11.835, 0)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+pivot_offset = Vector2(0, 143)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+
+[node name="Piers Icon" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 297.817
+offset_right = 219.137
+offset_bottom = 431.817
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("13_arsut")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Piers" type="Label" parent="Icons/Control/Credits/Piers Icon"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 17.229
+offset_right = 851.55
+offset_bottom = 84.229
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Piers
+(piers.zip)"
+
+[node name="TexIcon" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 468.809
+offset_right = 219.137
+offset_bottom = 602.809
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("13_2csy2")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Tex" type="Label" parent="Icons/Control/Credits/TexIcon"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 17.229
+offset_right = 851.55
+offset_bottom = 84.229
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tex Barnes
+(neighbourhoodsnake.com)"
+
+[node name="SimIcon" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 639.802
+offset_right = 219.137
+offset_bottom = 773.802
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("16_acmm8")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Tex" type="Label" parent="Icons/Control/Credits/SimIcon"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 17.229
+offset_right = 851.55
+offset_bottom = 84.229
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Simorco
+(@simorico.bsky.social)"
+
+[node name="LemonIcon" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 121.733
+offset_right = 219.137
+offset_bottom = 255.733
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("15_x3lvw")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Lemon" type="Label" parent="Icons/Control/Credits/LemonIcon"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 5.09157
+offset_right = 855.55
+offset_bottom = 104.092
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lemon 
+(@simplylemonart.bsky.social)"
+
+[node name="KaelinIcon" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 805.702
+offset_right = 219.137
+offset_bottom = 939.702
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("18_7ooed")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Kaelin" type="Label" parent="Icons/Control/Credits/KaelinIcon"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 5.09157
+offset_right = 855.55
+offset_bottom = 104.092
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Kaelin Stemmler
+(kaelinstemmler.carrd.co)"
+
+[node name="Camera" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 352.0
+offset_right = 240.0
+offset_bottom = 541.338
+nonIcon = false
+type = "ScreenShot"
+
+[node name="IconImg" parent="Icons/Control/Camera" index="0"]
+offset_right = 160.0
+offset_bottom = 189.0
+texture = ExtResource("11_0ffur")
+
+[node name="Selection" parent="Icons/Control/Camera" index="1"]
+offset_right = 160.0
+offset_bottom = 200.0
+
+[node name="Label" parent="Icons/Control/Camera" index="2"]
+offset_left = -32.0
+offset_top = 184.0
+offset_right = 211.0
+offset_bottom = 240.0
+text = "Screenshot.exe"
+
+[node name="Fish" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+layout_mode = 0
+offset_left = 73.2824
+offset_top = 599.145
+offset_right = 241.282
+offset_bottom = 788.483
+
+[node name="IconImg" parent="Icons/Control/Fish" index="0"]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 224.0
+offset_bottom = 232.0
+texture = ExtResource("14_iihwv")
+
+[node name="Selection" parent="Icons/Control/Fish" index="1"]
+offset_left = -32.0
+offset_right = 224.0
+offset_bottom = 200.0
+
+[node name="Label" parent="Icons/Control/Fish" index="2"]
+offset_left = -32.0
+offset_top = 184.0
+offset_right = 211.0
+offset_bottom = 240.0
+text = "Fish.png"
+
+[node name="PlayGame" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+layout_mode = 0
+offset_left = 73.2824
+offset_top = 855.634
+offset_right = 233.282
+offset_bottom = 1015.63
+texture = ExtResource("12_i5su6")
+nonIcon = false
+type = "Play"
+
+[node name="IconImg" parent="Icons/Control/PlayGame" index="0"]
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("12_i5su6")
+
+[node name="Selection" parent="Icons/Control/PlayGame" index="1"]
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="Label" parent="Icons/Control/PlayGame" index="2"]
+offset_left = -32.0
+offset_top = 184.0
+offset_right = 211.0
+offset_bottom = 240.0
+text = "Browser.exe"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -360,3 +727,10 @@ libraries = {
 
 [connection signal="mouse_entered" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_entered"]
 [connection signal="mouse_exited" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_exited"]
+[connection signal="mouse_entered" from="Icons/Control/Credits/OffButton" to="Icons/Control/Credits" method="_on_off_button_mouse_entered"]
+[connection signal="mouse_exited" from="Icons/Control/Credits/OffButton" to="Icons/Control/Credits" method="_on_off_button_mouse_exited"]
+
+[editable path="Icons/Control/CreditsCallObject"]
+[editable path="Icons/Control/Camera"]
+[editable path="Icons/Control/Fish"]
+[editable path="Icons/Control/PlayGame"]
