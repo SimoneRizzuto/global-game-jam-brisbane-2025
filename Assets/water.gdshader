@@ -23,7 +23,7 @@ void fragment() {
 
 	float d = clamp((length(CAMERA_POSITION_WORLD-pos)-0.08)/0.05,0.,1.);
 
-
+	
 	//ALPHA = d;//clamp((-abs(-viewVector.y*NORMAL_MAP.z*0.5)+0.8)*2.,0.5,1.)*d;
 
 
