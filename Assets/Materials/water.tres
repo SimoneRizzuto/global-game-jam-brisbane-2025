@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bal2hfe5aucbx" path="res://Assets/Textures/Water 0339normal.jpg" id="2_lf5yk"]
 
 [resource]
-render_priority = 127
+render_priority = 0
 shader = ExtResource("1_m4fa6")
 shader_parameter/color = Color(0.190478, 0.464921, 0.68625, 1)
 shader_parameter/normal = ExtResource("2_lf5yk")
