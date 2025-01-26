@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=31 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://bccnlc44hri54" path="res://Assets/UI/Camera Icon.png" id="11_0ffur"]
 [ext_resource type="Texture2D" uid="uid://hjuam0kqa1oo" path="res://Assets/UI/Millenium Icon.png" id="12_i5su6"]
 [ext_resource type="Script" path="res://Scripts/UI/credits.gd" id="12_k16yb"]
+[ext_resource type="Texture2D" uid="uid://wbsg6jiea3gg" path="res://Assets/Profile Pics/Creb.JPG" id="13_2csy2"]
 [ext_resource type="FontFile" uid="uid://35cfba05e4rg" path="res://Assets/Fonts/flexi-ibm-vga-true/Flexi_IBM_VGA_True.ttf" id="13_x5x1a"]
 [ext_resource type="Texture2D" uid="uid://c25yoij3p2rsj" path="res://Assets/UI/Fish.png" id="14_iihwv"]
+[ext_resource type="Texture2D" uid="uid://bjce11eap1u0p" path="res://Assets/Profile Pics/Blemon.JPG" id="15_x3lvw"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -84,7 +86,7 @@ _data = {
 
 [sub_resource type="Theme" id="Theme_h1ahq"]
 default_font = ExtResource("13_x5x1a")
-default_font_size = 32
+default_font_size = 48
 
 [sub_resource type="Animation" id="Animation_pttju"]
 resource_name = "OpenMenu"
@@ -458,6 +460,7 @@ layout_direction = 2
 layout_mode = 1
 anchors_preset = 0
 offset_bottom = 1080.0
+scale = Vector2(0.65, 0.65)
 mouse_filter = 2
 
 [node name="Control" type="Control" parent="Icons"]
@@ -465,7 +468,6 @@ layout_mode = 1
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 1072.0
-scale = Vector2(0.655, 0.655)
 pivot_offset = Vector2(0, 648)
 mouse_filter = 2
 
@@ -493,11 +495,12 @@ offset_right = 192.0
 offset_bottom = 256.0
 
 [node name="Credits" type="TextureRect" parent="Icons/Control"]
+visible = false
 layout_mode = 1
-offset_left = 1120.0
-offset_top = 128.0
-offset_right = 1864.0
-offset_bottom = 691.111
+offset_left = 1551.0
+offset_top = 111.0
+offset_right = 2906.0
+offset_bottom = 1246.0
 pivot_offset = Vector2(0, 149.152)
 mouse_filter = 2
 texture = ExtResource("10_4qo74")
@@ -517,26 +520,125 @@ pivot_offset = Vector2(0, 143)
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 
-[node name="Label" type="Label" parent="Icons/Control/Credits"]
-layout_mode = 0
-offset_left = 199.084
-offset_top = 153.588
-offset_right = 727.084
-offset_bottom = 186.588
-theme = SubResource("Theme_h1ahq")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Tex Barnes (neighbourhoodsnake.com)"
+[node name="TexIcon" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 297.817
+offset_right = 219.137
+offset_bottom = 431.817
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("13_2csy2")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
 
-[node name="Label2" type="Label" parent="Icons/Control/Credits"]
+[node name="Tex" type="Label" parent="Icons/Control/Credits/TexIcon"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 68.0
-offset_right = 493.0
-offset_bottom = 101.0
+offset_left = 146.55
+offset_top = 17.229
+offset_right = 851.55
+offset_bottom = 84.229
 theme = SubResource("Theme_h1ahq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Lemon (@simplylemonart.bsky.social)"
-horizontal_alignment = 2
+text = "Tex Barnes 
+(neighbourhoodsnake.com)"
+
+[node name="TexIcon2" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 468.809
+offset_right = 219.137
+offset_bottom = 602.809
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("13_2csy2")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Tex" type="Label" parent="Icons/Control/Credits/TexIcon2"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 17.229
+offset_right = 851.55
+offset_bottom = 84.229
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tex Barnes 
+(neighbourhoodsnake.com)"
+
+[node name="TexIcon3" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 639.802
+offset_right = 219.137
+offset_bottom = 773.802
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("13_2csy2")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Tex" type="Label" parent="Icons/Control/Credits/TexIcon3"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 17.229
+offset_right = 851.55
+offset_bottom = 84.229
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tex Barnes 
+(neighbourhoodsnake.com)"
+
+[node name="LemonIcon" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 121.733
+offset_right = 219.137
+offset_bottom = 255.733
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("15_x3lvw")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Lemon" type="Label" parent="Icons/Control/Credits/LemonIcon"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 5.09157
+offset_right = 855.55
+offset_bottom = 104.092
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lemon 
+(@simplylemonart.bsky.social)"
+
+[node name="LemonIcon2" type="TextureRect" parent="Icons/Control/Credits"]
+layout_mode = 1
+offset_left = 85.1375
+offset_top = 805.702
+offset_right = 219.137
+offset_bottom = 939.702
+pivot_offset = Vector2(0, 149.152)
+mouse_filter = 2
+texture = ExtResource("15_x3lvw")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("12_k16yb")
+
+[node name="Lemon" type="Label" parent="Icons/Control/Credits/LemonIcon2"]
+layout_mode = 0
+offset_left = 146.55
+offset_top = 5.09157
+offset_right = 855.55
+offset_bottom = 104.092
+theme = SubResource("Theme_h1ahq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lemon 
+(@simplylemonart.bsky.social)"
 
 [node name="Camera" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
 layout_mode = 0
