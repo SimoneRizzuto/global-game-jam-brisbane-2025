@@ -5,8 +5,15 @@ public partial class TitleCard : Control
 {
 	[Export] private Label mainTitle;
 	[Export] private Label subTitle;
-	
-	
+
+	[Export] private bool isMain = false;
+
+	public static TitleCard main;
+
+	public override void _Ready()
+	{
+		if (isMain) main = this;
+	}
 
 	public void UpdateTitle(string title, string subtitle,bool typeOut)
 	{

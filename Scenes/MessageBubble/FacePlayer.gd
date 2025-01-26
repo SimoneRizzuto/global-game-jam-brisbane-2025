@@ -3,6 +3,7 @@ extends Node3D
 @onready var area = get_parent().get_node("Area3D")
 @onready var mesh = get_parent().get_node("MeshInstance3D")
 
+
 var player
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +19,9 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body.name == "Player":
-		visible = true
+		#visible = true
 		area.visible = false
 		mesh.visible = false
 		player = body
+		
+		
