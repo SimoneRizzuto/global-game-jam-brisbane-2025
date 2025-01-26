@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://1rr0i2unh4sh"]
 
 [ext_resource type="Script" path="res://Scripts/MessageBubble/MessageBubble.cs" id="1_g3gi1"]
-[ext_resource type="Material" uid="uid://c3wnef8qouj6d" path="res://Assets/Materials/messagebubble.tres" id="2_0lgbs"]
+[ext_resource type="Material" path="res://Assets/Materials/messagebubble.tres" id="2_0lgbs"]
 [ext_resource type="FontFile" uid="uid://chhpjakeimqw0" path="res://Assets/Fonts/ethnocentric/Ethnocentric Rg It.otf" id="2_itw40"]
 [ext_resource type="Script" path="res://Scenes/MessageBubble/FacePlayer.gd" id="2_oons2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f5sq1"]
-radius = 0.247438
+radius = 0.33959
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilh6x"]
 albedo_color = Color(0.421247, 0.624083, 0.856463, 0.184314)
