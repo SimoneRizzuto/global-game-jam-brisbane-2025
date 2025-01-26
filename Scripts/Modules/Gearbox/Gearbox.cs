@@ -36,7 +36,7 @@ public partial class Gearbox : Node
 	public void Pause()
     {
 		paused = true;
-		UI.Call("Pause");
+		UI.Call("Pause",start);
 
 	}
 	public void Unpause()
