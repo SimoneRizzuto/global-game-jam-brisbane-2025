@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=26 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://b1y2t7xuer7g5" path="res://Assets/UI/UI Red button.png" id="9_iwtv2"]
 [ext_resource type="Texture2D" uid="uid://v7jsdj6nw5u3" path="res://Assets/UI/Defenestration window.png" id="10_4qo74"]
 [ext_resource type="PackedScene" uid="uid://d2pp6omxf4l6h" path="res://Scenes/UI/icon_object.tscn" id="10_lnhh6"]
+[ext_resource type="Texture2D" uid="uid://bccnlc44hri54" path="res://Assets/UI/Camera Icon.png" id="11_0ffur"]
+[ext_resource type="Texture2D" uid="uid://hjuam0kqa1oo" path="res://Assets/UI/Millenium Icon.png" id="12_i5su6"]
+[ext_resource type="Script" path="res://Scripts/UI/credits.gd" id="12_k16yb"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -233,6 +236,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Icons/Control/Credits:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r41nn"]
 _data = {
@@ -447,8 +462,28 @@ offset_bottom = 1072.0
 pivot_offset = Vector2(0, 648)
 mouse_filter = 2
 
-[node name="IconObject" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+[node name="CreditsCallObject" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
 layout_mode = 0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 240.0
+offset_bottom = 261.338
+nonIcon = false
+type = "Credits"
+
+[node name="IconImg" parent="Icons/Control/CreditsCallObject" index="0"]
+offset_right = 168.0
+offset_bottom = 189.338
+
+[node name="Selection" parent="Icons/Control/CreditsCallObject" index="1"]
+offset_right = 160.0
+offset_bottom = 200.0
+
+[node name="Label" parent="Icons/Control/CreditsCallObject" index="2"]
+offset_left = -24.0
+offset_top = 200.0
+offset_right = 192.0
+offset_bottom = 256.0
 
 [node name="Credits" type="TextureRect" parent="Icons/Control"]
 visible = false
@@ -462,6 +497,7 @@ mouse_filter = 2
 texture = ExtResource("10_4qo74")
 expand_mode = 5
 stretch_mode = 4
+script = ExtResource("12_k16yb")
 
 [node name="OffButton" type="Control" parent="Icons/Control/Credits"]
 z_index = 1
@@ -475,6 +511,55 @@ pivot_offset = Vector2(0, 143)
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 
+[node name="Camera" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 352.0
+offset_right = 240.0
+offset_bottom = 541.338
+
+[node name="IconImg" parent="Icons/Control/Camera" index="0"]
+offset_right = 160.0
+offset_bottom = 189.0
+texture = ExtResource("11_0ffur")
+
+[node name="Selection" parent="Icons/Control/Camera" index="1"]
+offset_right = 160.0
+offset_bottom = 200.0
+
+[node name="Label" parent="Icons/Control/Camera" index="2"]
+offset_left = -32.0
+offset_top = 184.0
+offset_right = 211.0
+offset_bottom = 240.0
+text = "Take_ScreenCap.exe"
+
+[node name="PlayGame" parent="Icons/Control" instance=ExtResource("10_lnhh6")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 600.0
+offset_right = 232.0
+offset_bottom = 760.0
+texture = ExtResource("12_i5su6")
+nonIcon = false
+type = "Play"
+
+[node name="IconImg" parent="Icons/Control/PlayGame" index="0"]
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("12_i5su6")
+
+[node name="Selection" parent="Icons/Control/PlayGame" index="1"]
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="Label" parent="Icons/Control/PlayGame" index="2"]
+offset_left = -32.0
+offset_top = 184.0
+offset_right = 211.0
+offset_bottom = 240.0
+text = "Browser.exe"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_r41nn")
@@ -482,3 +567,9 @@ libraries = {
 
 [connection signal="mouse_entered" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_entered"]
 [connection signal="mouse_exited" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_exited"]
+[connection signal="mouse_entered" from="Icons/Control/Credits/OffButton" to="Icons/Control/Credits" method="_on_off_button_mouse_entered"]
+[connection signal="mouse_exited" from="Icons/Control/Credits/OffButton" to="Icons/Control/Credits" method="_on_off_button_mouse_exited"]
+
+[editable path="Icons/Control/CreditsCallObject"]
+[editable path="Icons/Control/Camera"]
+[editable path="Icons/Control/PlayGame"]

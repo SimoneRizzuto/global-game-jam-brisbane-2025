@@ -5,9 +5,12 @@ extends TextureRect
 @onready var img = $IconImg
 
 var MaxScale = 1.1
+var minScale = 0.9
 
 var hovered = false
 var WiggleTime = 0
+
+@export var type = "Null"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,14 +32,25 @@ func wiggle():
 		WiggleTime -= 0.1
 		await get_tree().create_timer(0.05).timeout
 	rotation_degrees = 0
+	
+func squash():
+	img.scale = Vector2.ONE*minScale
+	await get_tree().create_timer(0.05).timeout
+	img.scale = Vector2.ONE
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and hovered:
-				print ()
 				if nonIcon:
 					wiggle()
+				else:
+					squash()
+					if type == "Credits":
+						get_parent().get_node("Credits").visible = true
+					elif type == "Play":
+						get_parent().get_parent().get_parent().get_parent().Unpause()
+						Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _on_selection_mouse_entered():
 	if !hovered:
