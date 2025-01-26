@@ -2,16 +2,15 @@
 
 [resource]
 disable_fog = true
-albedo_color = Color(0.421247, 0.624083, 0.856463, 0.184314)
-metallic = 1.0
-metallic_specular = 1.0
-roughness = 0.0
+albedo_color = Color(0.894118, 0.34902, 0.862745, 0.388235)
+metallic = 0.79
+metallic_specular = 0.7
+roughness = 0.18
 emission_enabled = true
-emission = Color(0.386799, 0.113598, 0.328185, 1)
+emission = Color(0.612892, 0.21285, 0.525488, 1)
+emission_energy_multiplier = 0.66
 rim_enabled = true
-rim_tint = 0.0
-clearcoat_enabled = true
+rim_tint = 0.21
 clearcoat_roughness = 0.0
-backlight_enabled = true
 refraction_enabled = true
-refraction_scale = 0.04
+refraction_scale = 0.17

@@ -8,6 +8,8 @@ public partial class TitleCard : Control
 
 	[Export] private bool isMain = false;
 
+	[Export] private TextureRect image;
+
 	public static TitleCard main;
 
 	public override void _Ready()
@@ -15,7 +17,7 @@ public partial class TitleCard : Control
 		if (isMain) main = this;
 	}
 
-	public void UpdateTitle(string title, string subtitle,bool typeOut)
+	public void UpdateTitle(string title, string subtitle,bool typeOut, Texture2D texture = null)
 	{
 		mainTitle.Text = title;
 		visibleTitleCharacters = typeOut ? 0 : title.Length;
@@ -23,6 +25,8 @@ public partial class TitleCard : Control
 		visibleSubtitleCharacters = 0;
 
 		clearTime = 8f;
+
+		if (texture != null && image != null) image.Texture = texture;
 	}
 
 	private float coolDown = 0.05f;
@@ -77,6 +81,8 @@ public partial class TitleCard : Control
 
 		mainTitle.VisibleCharacters = visibleTitleCharacters;
 		subTitle.VisibleCharacters = Math.Max(visibleSubtitleCharacters, 0);
+
+		if (image != null) image.Visible = Math.Max(visibleSubtitleCharacters,visibleTitleCharacters) > 0;
 
 
 

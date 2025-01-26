@@ -3,25 +3,26 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjce11eap1u0p"
-path="res://.godot/imported/Blemon.JPG-1e06d0309287bee0977763e1fa416a46.ctex"
+path.s3tc="res://.godot/imported/blemon.JPG-d0a95911b0120c71ca0aa7d7a0995a66.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/Profile Pics/Blemon.JPG"
-dest_files=["res://.godot/imported/Blemon.JPG-1e06d0309287bee0977763e1fa416a46.ctex"]
+source_file="res://Assets/Profile Pics/blemon.JPG"
+dest_files=["res://.godot/imported/blemon.JPG-d0a95911b0120c71ca0aa7d7a0995a66.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
