@@ -12,7 +12,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if visible:
-		look_at(player.global_position)
+		rotation = get_viewport().get_camera_3d().global_rotation
+		rotate_object_local(Vector3.UP,3.14159)
 
 
 func _on_area_3d_body_entered(body):
