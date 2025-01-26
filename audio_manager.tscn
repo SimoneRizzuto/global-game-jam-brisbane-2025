@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://errcp462oa6s"]
+
+[ext_resource type="Script" path="res://audio_manager.gd" id="1_4xyb8"]
+[ext_resource type="AudioStream" uid="uid://cfm1yjppqa5no" path="res://Audio/boot_dot_exe.ogg" id="2_5ki8w"]
+[ext_resource type="AudioStream" uid="uid://cjy1uxppvprvq" path="res://Audio/Dipshits speak.ogg" id="3_i0srt"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_4xyb8")
+
+[node name="Ocean" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5ki8w")
+parameters/looping = false
+
+[node name="MusicBelowSurface" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i0srt")
+parameters/looping = true
+
+[connection signal="finished" from="Ocean" to="." method="_on_ocean_finished"]

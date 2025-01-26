@@ -18,7 +18,7 @@ var dashing = false
 #Systems for managing surfacing, including launching out of the water and bobbing on the surface
 var gravity = 2
 var fallSpeed = 2
-var sinkSpeed = 1.0
+var sinkSpeed = 0.2
 var surfacePoint = 0.25
 var bobPoint = -0.5
 var surfaced = false
@@ -110,8 +110,10 @@ func depth_management():
 	var index = global_position.y / -maximumDepth
 	index = clampf(index,0.0,1.0)
 	dashSpeed = lerpf(initialDash,initialDash * maximumDepthMod, index)
-	sinkSpeed = lerpf(initialSink,initialSink * maximumDepthMod, index)
+	#sinkSpeed = lerpf(initialSink,initialSink * maximumDepthMod, index)
 	speed = lerpf(initialSpeed,initialSpeed * maximumDepthMod, index)
+	
+	AudioManager.playerPos = global_position.y
 
 #if above the water, fall back to the surface, and then bob up and down until you recieve new input
 func surface_and_descent(delta):

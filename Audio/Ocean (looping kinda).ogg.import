@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b33ggth5ehnt1"
+path="res://.godot/imported/Ocean (looping kinda).ogg-3d5085b03b726f9cd554f84865983e96.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Ocean (looping kinda).ogg"
+dest_files=["res://.godot/imported/Ocean (looping kinda).ogg-3d5085b03b726f9cd554f84865983e96.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
