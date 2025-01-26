@@ -6,274 +6,274 @@
 transform = Transform3D(1, 1.09139e-11, -1.16415e-10, -4.54747e-13, 1, 2.32831e-10, 1.16415e-10, -2.32831e-10, 1, 0, 0, 0)
 
 [node name="hello" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.446094, 0.22583, -0.000778179, -0.225831, 0.446091, -0.00179127, -0.00011477, 0.00194963, 0.499996, 1.18619, -2.87274, -3.09071)
+transform = Transform3D(0.223047, 0.112915, -0.000389089, -0.112916, 0.223045, -0.000895637, -5.7385e-05, 0.000974815, 0.249998, 1.18619, -2.87274, -3.09071)
 Message = "hello"
 
 [node name="hi, welcome" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.54747e-13, -6.40284e-10, 1.95541e-11, 0.5, 1.62981e-09, 6.40284e-10, -1.62981e-09, 0.5, 0.399055, -5.92582, -3.6866)
+transform = Transform3D(0.25, -9.77705e-12, -3.20142e-10, 9.77705e-12, 0.25, 8.14905e-10, 3.20142e-10, -8.14905e-10, 0.25, 0.399055, -5.92582, -3.6866)
 Message = "hi, welcome"
 
 [node name="Halo there!" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.13909e-12, -2.91038e-10, 6.13909e-12, 0.5, 5.82077e-10, 2.91038e-10, -5.82077e-10, 0.5, 1.91203, -7.82383, -3.89653)
+transform = Transform3D(0.25, -3.06954e-12, -1.45519e-10, 3.06955e-12, 0.25, 2.91038e-10, 1.45519e-10, -2.91038e-10, 0.25, 1.91203, -7.82383, -3.89653)
 Message = "Halo there! :D"
 
 [node name="new here, what do i do here" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, -7.95808e-12, -4.65661e-10, 2.02363e-11, 0.5, 9.31323e-10, 4.65661e-10, -9.31323e-10, 0.5, -0.20832, -12.2137, 3.23205)
+transform = Transform3D(0.25, -1.01182e-11, -2.32831e-10, 1.01182e-11, 0.25, 4.65662e-10, 2.32831e-10, -4.65662e-10, 0.25, -0.20832, -12.2137, 3.23205)
 Message = "new here, what do i do here"
 
 [node name="*quack* *quack*! (The Millennium Duck says hello)" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 8.86757e-11, -1.10595e-09, 1.06866e-11, 0.5, 2.21189e-09, 1.10595e-09, -2.21189e-09, 0.5, 0.542236, -15.611, 6.47386)
+transform = Transform3D(0.25, -5.3433e-12, -5.52975e-10, 5.3433e-12, 0.25, 1.10595e-09, 5.52975e-10, -1.10595e-09, 0.25, 0.542236, -15.611, 6.47386)
 Message = "*quack* *quack*! (The Millennium Duck says hello!)"
 
 [node name="Shower thoughts_ do you think cats wanna play video games?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 2.04636e-11, -2.32831e-10, -9.09495e-13, 0.5, 4.65661e-10, 2.32831e-10, -4.65661e-10, 0.5, 4.81105, -16.7133, 8.65377)
+transform = Transform3D(0.25, 4.54748e-13, -1.16416e-10, -4.54748e-13, 0.25, 2.32831e-10, 1.16416e-10, -2.32831e-10, 0.25, 4.81105, -16.7133, 8.65377)
 Message = "Shower thoughts: do you think cats wanna play video games?"
 
 [node name="Shower thoughts_ i don\'t wash my legs in the shower_ do you think people can smell that?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 2.77396e-11, -2.32831e-10, -9.09495e-13, 0.5, 4.65661e-10, 2.32831e-10, -4.65661e-10, 0.5, 4.02936, -17.081, 11.2841)
+transform = Transform3D(0.25, 4.54748e-13, -1.16416e-10, -4.54748e-13, 0.25, 2.32831e-10, 1.16416e-10, -2.32831e-10, 0.25, 4.02936, -17.081, 11.2841)
 Message = "Shower thoughts: i don't wash my legs in the shower. do you think people can smell that?"
 
 [node name="Shower thoughts_ do you ever think the inevitable heat death of the universe making everything you do pointless?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.75255e-11, -4.65661e-10, -1.59162e-12, 0.5, 9.31323e-10, 4.65661e-10, -9.31323e-10, 0.5, 3.82758, -19.0266, 7.29903)
+transform = Transform3D(0.25, 7.9581e-13, -2.32831e-10, -7.9581e-13, 0.25, 4.65662e-10, 2.32831e-10, -4.65662e-10, 0.25, 3.82758, -19.0266, 7.29903)
 Message = "Shower thoughts: do you ever think the inevitable heat death of the universe making everything you do pointless?
 "
 
 [node name="here\'s a video of my cat licking its toes _3" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.75255e-11, -4.65661e-10, -1.59162e-12, 0.5, 9.31323e-10, 4.65661e-10, -9.31323e-10, 0.5, -2.90705, -24.5622, 18.0391)
+transform = Transform3D(0.25, 7.9581e-13, -2.32831e-10, -7.9581e-13, 0.25, 4.65662e-10, 2.32831e-10, -4.65662e-10, 0.25, -2.90705, -24.5622, 18.0391)
 Message = "here's a video of my cat licking its toes :3"
 
 [node name="here\'s a video of my cat headbutting the camera _3" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.47793e-11, -6.98492e-10, -2.50111e-12, 0.5, 1.39698e-09, 6.98492e-10, -1.39698e-09, 0.5, -2.90379, -22.2763, 16.1907)
+transform = Transform3D(0.25, 1.25056e-12, -3.49246e-10, -1.25055e-12, 0.25, 6.9849e-10, 3.49246e-10, -6.9849e-10, 0.25, -2.90379, -22.2763, 16.1907)
 Message = "here's a video of my cat headbutting the camera :3"
 
 [node name="here\'s a video of my cat running for its life _3" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 3.52429e-11, -2.91038e-10, -1.13687e-12, 0.5, 5.82077e-10, 2.91038e-10, -5.82077e-10, 0.5, -3.01295, -26.6361, 16.6888)
+transform = Transform3D(0.25, 5.68435e-13, -1.45519e-10, -5.68435e-13, 0.25, 2.91038e-10, 1.45519e-10, -2.91038e-10, 0.25, -3.01295, -26.6361, 16.6888)
 Message = "here's a video of my cat running for its life :3"
 
 [node name="feel cute in my outfit???? idk, you tell me, John!" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.27463e-11, -3.49246e-10, -1.36424e-12, 0.5, 6.98492e-10, 3.49246e-10, -6.98492e-10, 0.5, -6.73632, -29.9918, 20.7099)
+transform = Transform3D(0.25, 6.8212e-13, -1.74623e-10, -6.8212e-13, 0.25, 3.49246e-10, 1.74623e-10, -3.49246e-10, 0.25, -6.73632, -29.9918, 20.7099)
 Message = "feel cute in my outfit???? idk, you tell me, John!"
 
 [node name="*quack* *quack* *quack*_ (The Millennium Duck reminds you to drink water_)" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 8.00355e-11, -6.40284e-10, -2.27374e-12, 0.5, 1.28057e-09, 6.40284e-10, -1.28057e-09, 0.5, -4.71128, -32.3664, 18.1897)
+transform = Transform3D(0.25, 1.13687e-12, -3.20142e-10, -1.13687e-12, 0.25, 6.40285e-10, 3.20142e-10, -6.40285e-10, 0.25, -4.71128, -32.3664, 18.1897)
 Message = "*quack* *quack* *quack*. (The Millennium Duck reminds you to drink water.)"
 
 [node name="omg_ so my best friend Taylor told me that her sister Lez told her that her boyfriend John told her that Jordan thinks i am a poser and fake_ that\'s not true!!!!" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.17325e-10, -9.31323e-10, -3.41061e-12, 0.5, 1.86265e-09, 9.31323e-10, -1.86265e-09, 0.5, -5.09331, -35.3517, 17.1059)
+transform = Transform3D(0.25, 1.70531e-12, -4.65662e-10, -1.7053e-12, 0.25, 9.31325e-10, 4.65662e-10, -9.31325e-10, 0.25, -5.09331, -35.3517, 17.1059)
 Message = "omg. so my best friend Taylor told me that her sister Lez told her that her boyfriend John told her that Jordan thinks 
 i am a poser and fake. that's not true!!!!"
 
 [node name="Would you say Your Alchemical Affair is considered emo?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.02496e-11, -4.07454e-10, -1.36424e-12, 0.5, 8.14907e-10, 4.07454e-10, -8.14907e-10, 0.5, 1.70729, -37.9218, 20.3692)
+transform = Transform3D(0.25, 6.8212e-13, -2.03727e-10, -6.8212e-13, 0.25, 4.07453e-10, 2.03727e-10, -4.07453e-10, 0.25, 1.70729, -37.9218, 20.3692)
 Message = "Would you say Your Alchemical Affair is considered emo?"
 
 [node name="It really depends on your definition of _emo__ What is _emo_? To determine that, you\'d have to look at the history of _emo_ culture to determine what makes _emo_ truly _emo__" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.02496e-11, -4.07454e-10, -1.36424e-12, 0.5, 8.14907e-10, 4.07454e-10, -8.14907e-10, 0.5, 0.966911, -39.8337, 21.0924)
+transform = Transform3D(0.25, 6.8212e-13, -2.03727e-10, -6.8212e-13, 0.25, 4.07453e-10, 2.03727e-10, -4.07453e-10, 0.25, 0.966911, -39.8337, 21.0924)
 Message = "It really depends on your definition of \"emo\". What is \"emo\"? To determine that, you'd have to look at the history of \"emo\" culture to determine what makes \"emo\" truly \"emo\"."
 
 [node name="no rofl, they make rock music, take that stick out" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 7.25322e-11, -5.82077e-10, -2.04636e-12, 0.5, 1.16415e-09, 5.82077e-10, -1.16415e-09, 0.5, 0.577788, -41.604, 22.4105)
+transform = Transform3D(0.25, 1.02318e-12, -2.91038e-10, -1.02318e-12, 0.25, 5.82075e-10, 2.91038e-10, -5.82075e-10, 0.25, 0.577788, -41.604, 22.4105)
 Message = "no rofl, they make rock music, take that stick out
 "
 
 [node name="_Oops I did it again_ - anon" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 8.00355e-11, -6.40284e-10, -2.27374e-12, 0.5, 1.28057e-09, 6.40284e-10, -1.28057e-09, 0.5, 0.951249, -46.7528, 30.4105)
+transform = Transform3D(0.25, 1.13687e-12, -3.20142e-10, -1.13687e-12, 0.25, 6.40285e-10, 3.20142e-10, -6.40285e-10, 0.25, 0.951249, -46.7528, 30.4105)
 Message = "\"Oops I did it again\" - anon"
 
 [node name="*quack*___ (The Millennium Duck is sad today___)" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.32104e-10, -1.04774e-09, -3.86535e-12, 0.5, 2.09548e-09, 1.04774e-09, -2.09548e-09, 0.5, -2.29442, -49.0399, 35.4348)
+transform = Transform3D(0.25, 1.93268e-12, -5.2387e-10, -1.93267e-12, 0.25, 1.04774e-09, 5.2387e-10, -1.04774e-09, 0.25, -2.29442, -49.0399, 35.4348)
 Message = "*quack*... (The Millennium Duck is sad today...)"
 
 [node name="Katsune Miku has been overrated since the second album_ Everyone only likes her because of they\'re appealing to the lowest common denominator of people_ Everyone should listen to real music like Teito\'s third album_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.24828e-10, -9.8953e-10, -3.63798e-12, 0.5, 1.97906e-09, 9.8953e-10, -1.97906e-09, 0.5, -5.72135, -49.4028, 33.4272)
+transform = Transform3D(0.25, 1.81899e-12, -4.94765e-10, -1.81899e-12, 0.25, 9.8953e-10, 4.94765e-10, -9.8953e-10, 0.25, -5.72135, -49.4028, 33.4272)
 Message = "Katsune Miku has been overrated since the second album. Everyone only likes her because of they're appealing to the lowest common denominator of people. Everyone should listen to real music like Teito's third album."
 
 [node name="i have my propeller hat on while my city burns to the ground_ SEE YOU LATER, FIRES!" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.54841e-10, -1.28057e-09, -4.54747e-12, 0.5, 2.56114e-09, 1.28057e-09, -2.56114e-09, 0.5, -2.59589, -51.4973, 31.3591)
+transform = Transform3D(0.25, 2.27374e-12, -6.40285e-10, -2.27374e-12, 0.25, 1.28057e-09, 6.40285e-10, -1.28057e-09, 0.25, -2.59589, -51.4973, 31.3591)
 Message = "i have my propeller hat on while my city burns to the ground. SEE YOU LATER, FIRES!"
 
 [node name="gr8 b8, m8, appreci8, no h8, l8r sk8r" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.56433e-10, -1.80444e-09, -6.36646e-12, 0.5, 3.60887e-09, 1.80444e-09, -3.60887e-09, 0.5, 1.67183, -54.3384, 27.3247)
+transform = Transform3D(0.25, 3.18324e-12, -9.0222e-10, -3.18323e-12, 0.25, 1.80444e-09, 9.0222e-10, -1.80444e-09, 0.25, 1.67183, -54.3384, 27.3247)
 Message = "gr8 b8, m8, appreci8, no h8, l8r sk8r"
 
 [node name="noob" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.55524e-10, -1.5134e-09, -5.45697e-12, 0.5, 3.0268e-09, 1.5134e-09, -3.0268e-09, 0.5, -1.50548, -55.7849, 26.3252)
+transform = Transform3D(0.25, 2.72849e-12, -7.567e-10, -2.72848e-12, 0.25, 1.5134e-09, 7.567e-10, -1.5134e-09, 0.25, -1.50548, -55.7849, 26.3252)
 Message = "noob"
 
 [node name="New haircut_ What do you think?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.39607e-10, -1.10595e-09, -3.86535e-12, 0.5, 2.21189e-09, 1.10595e-09, -2.21189e-09, 0.5, -3.61857, -56.4215, 26.3196)
+transform = Transform3D(0.25, 1.93268e-12, -5.52975e-10, -1.93267e-12, 0.25, 1.10595e-09, 5.52975e-10, -1.10595e-09, 0.25, -3.61857, -56.4215, 26.3196)
 Message = "New haircut. What do you think?
 "
 
 [node name="i am talking to my rubber ducky, but it never talks back _-(" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.55524e-10, -1.5134e-09, -5.45697e-12, 0.5, 3.0268e-09, 1.5134e-09, -3.0268e-09, 0.5, -8.38283, -62.2377, 25.0929)
+transform = Transform3D(0.25, 2.72849e-12, -7.567e-10, -2.72848e-12, 0.25, 1.5134e-09, 7.567e-10, -1.5134e-09, 0.25, -8.38283, -62.2377, 25.0929)
 Message = "i am talking to my rubber ducky, but it never talks back :-("
 
 [node name="does anyone know how to use a microwave? it doesn\'t wave my food!" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.54841e-10, -1.28057e-09, -4.54747e-12, 0.5, 2.56114e-09, 1.28057e-09, -2.56114e-09, 0.5, -9.31778, -88.9799, 24.9956)
+transform = Transform3D(0.25, 2.27374e-12, -6.40285e-10, -2.27374e-12, 0.25, 1.28057e-09, 6.40285e-10, -1.28057e-09, 0.25, -9.31778, -88.9799, 24.9956)
 Message = "does anyone know how to use a microwave? it doesn't wave my food!"
 
 [node name="oh, it just wasn\'t plugged in___" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.55296e-10, -1.45519e-09, -5.22959e-12, 0.5, 2.91038e-09, 1.45519e-09, -2.91038e-09, 0.5, -8.62268, -91.1963, 26.0454)
+transform = Transform3D(0.25, 2.6148e-12, -7.27595e-10, -2.6148e-12, 0.25, 1.45519e-09, 7.27595e-10, -1.45519e-09, 0.25, -8.62268, -91.1963, 26.0454)
 Message = "oh, it just wasn't plugged in...
 "
 
 [node name="im just here to have a good time, and I feel like im being attacked here" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.55751e-10, -1.62981e-09, -5.91172e-12, 0.5, 3.25963e-09, 1.62981e-09, -3.25963e-09, 0.5, -29.4498, -159.038, 24.7133)
+transform = Transform3D(0.25, 2.95587e-12, -8.14905e-10, -2.95586e-12, 0.25, 1.62981e-09, 8.14905e-10, -1.62981e-09, 0.25, -29.4498, -159.038, 24.7133)
 Message = "im just here to have a good time, and I feel like im being attacked here"
 
 [node name="Is it bad if I\'m scared of flying??? I feel stupid for feeling this, but I just go to the worst case scenario_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 1.63936e-10, -1.92085e-09, -6.82121e-12, 0.5, 3.84171e-09, 1.92085e-09, -3.84171e-09, 0.5, -42.7181, -195.978, 24.5603)
+transform = Transform3D(0.25, 3.41061e-12, -9.60425e-10, -3.4106e-12, 0.25, 1.92086e-09, 9.60425e-10, -1.92086e-09, 0.25, -42.7181, -195.978, 24.5603)
 Message = "Is it bad if I'm scared of flying??? I feel stupid for feeling this, but I just go to the worst case scenario."
 
 [node name="I made another cool song after months of procrastinating_ I would really appreciate if you listened to it!" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 2.38515e-10, -2.50293e-09, -8.86757e-12, 0.5, 5.00586e-09, 2.50293e-09, -5.00586e-09, 0.5, -36.5344, -212.865, 47.2955)
+transform = Transform3D(0.25, 4.4338e-12, -1.25147e-09, -4.43378e-12, 0.25, 2.50293e-09, 1.25147e-09, -2.50293e-09, 0.25, -36.5344, -212.865, 47.2955)
 Message = "I made another cool song after months of procrastinating. I would really appreciate if you listened to it! "
 
 [node name="this is so cool_ I love your music so much_ I totally get it tho_ no pressure to post more_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 2.53522e-10, -2.61934e-09, -9.32232e-12, 0.5, 5.23869e-09, 2.61934e-09, -5.23869e-09, 0.5, -38.2648, -214.475, 48.2727)
+transform = Transform3D(0.25, 4.66117e-12, -1.30967e-09, -4.66116e-12, 0.25, 2.61934e-09, 1.30967e-09, -2.61934e-09, 0.25, -38.2648, -214.475, 48.2727)
 Message = "this is so cool. I love your music so much. I totally get it tho. no pressure to post more."
 
 [node name="reminds me of better times_ man___" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 2.75804e-10, -2.79397e-09, -1.00044e-11, 0.5, 5.58794e-09, 2.79397e-09, -5.58794e-09, 0.5, -37.6553, -214.733, 45.4585)
+transform = Transform3D(0.25, 5.00222e-12, -1.39698e-09, -5.0022e-12, 0.25, 2.79397e-09, 1.39698e-09, -2.79397e-09, 0.25, -37.6553, -214.733, 45.4585)
 Message = "reminds me of better times. man...
 "
 
 [node name="Hello I am play _Raider Sisters_ and I am stuck in dinasour level 6_ How do I open door with lock? I am look everywhere and I am not find it_ Thankyou very much for help_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 3.65389e-10, -3.49246e-09, -1.25056e-11, 0.5, 6.98492e-09, 3.49246e-09, -6.98492e-09, 0.5, -73.9471, -285.8, 33.3736)
+transform = Transform3D(0.25, 6.25282e-12, -1.74623e-09, -6.2528e-12, 0.25, 3.49246e-09, 1.74623e-09, -3.49246e-09, 0.25, -73.9471, -285.8, 33.3736)
 Message = "Hello I am play \"Raider Sisters\" and I am stuck in dinasour level 6. How do I open door with lock? I am look everywhere and I am not find it. Thankyou very much for help."
 
 [node name="have you tried going to the left room next to the locked door___?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 3.72893e-10, -3.60887e-09, -1.29603e-11, 0.5, 7.21775e-09, 3.60887e-09, -7.21775e-09, 0.5, -76.2493, -289.287, 33.3575)
+transform = Transform3D(0.25, 6.48018e-12, -1.80444e-09, -6.48015e-12, 0.25, 3.60887e-09, 1.80444e-09, -3.60887e-09, 0.25, -76.2493, -289.287, 33.3575)
 Message = "have you tried going to the left room next to the locked door...?"
 
 [node name="Try the room to the left_ This one got me stuck too_ _P If you look up, you\'ll see where you need to go next_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 3.73348e-10, -3.72529e-09, -1.3415e-11, 0.5, 7.45058e-09, 3.72529e-09, -7.45058e-09, 0.5, -74.673, -291.132, 35.2946)
+transform = Transform3D(0.25, 6.70753e-12, -1.86265e-09, -6.7075e-12, 0.25, 3.72529e-09, 1.86265e-09, -3.72529e-09, 0.25, -74.673, -291.132, 35.2946)
 Message = "Try the room to the left. This one got me stuck too. :P If you look up, you'll see where you need to go next."
 
 [node name="When you empty the Recycling Bin, where does the Rubbish files go? To digital heaven?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 3.74712e-10, -4.13274e-09, -1.47793e-11, 0.5, 8.26549e-09, 4.13274e-09, -8.26549e-09, 0.5, -121.013, -310.625, 19.1183)
+transform = Transform3D(0.25, 7.38968e-12, -2.06637e-09, -7.38965e-12, 0.25, 4.13274e-09, 2.06637e-09, -4.13274e-09, 0.25, -121.013, -310.625, 19.1183)
 Message = "When you empty the Recycling Bin, where does the Rubbish files go? To digital heaven?"
 
 [node name="School starts tomorrow_ I dont wanna gooooooooo_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 3.82443e-10, -4.30737e-09, -1.54614e-11, 0.5, 8.61473e-09, 4.30737e-09, -8.61473e-09, 0.5, -149.211, -312.38, 19.0681)
+transform = Transform3D(0.25, 7.73074e-12, -2.15369e-09, -7.7307e-12, 0.25, 4.30737e-09, 2.15369e-09, -4.30737e-09, 0.25, -149.211, -312.38, 19.0681)
 Message = "School starts tomorrow. I dont wanna gooooooooo."
 
 [node name="im holidays for one more week_ sux for you" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 3.89946e-10, -4.36557e-09, -1.56888e-11, 0.5, 8.73115e-09, 4.36557e-09, -8.73115e-09, 0.5, -155.275, -313.699, 16.3323)
+transform = Transform3D(0.25, 7.84444e-12, -2.18279e-09, -7.8444e-12, 0.25, 4.36558e-09, 2.18279e-09, -4.36558e-09, 0.25, -155.275, -313.699, 16.3323)
 Message = "im holidays for one more week. sux for you
 "
 
 [node name="*quack*_ (The Millennium Duck floats away the day in the bathtub_)" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.27235e-10, -4.65661e-09, -1.65983e-11, 0.5, 9.31323e-09, 4.65661e-09, -9.31323e-09, 0.5, -190.158, -316.761, 7.46812)
+transform = Transform3D(0.25, 8.29919e-12, -2.32831e-09, -8.29915e-12, 0.25, 4.65662e-09, 2.32831e-09, -4.65662e-09, 0.25, -190.158, -316.761, 7.46812)
 Message = "*quack*. (The Millennium Duck floats away the day in the bathtub.)"
 
 [node name="bitches be so fake on here, where\'s my real bitches at?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.27235e-10, -4.65661e-09, -1.65983e-11, 0.5, 9.31323e-09, 4.65661e-09, -9.31323e-09, 0.5, -271.818, -319.605, 7.33084)
+transform = Transform3D(0.25, 8.29919e-12, -2.32831e-09, -8.29915e-12, 0.25, 4.65662e-09, 2.32831e-09, -4.65662e-09, 0.25, -271.818, -319.605, 7.33084)
 Message = "bitches be so fake on here, where's my real bitches at?"
 
 [node name="lying on my bed, staring at the crack on my ceiling___e20" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.34738e-10, -4.71482e-09, -1.68257e-11, 0.5, 9.42964e-09, 4.71482e-09, -9.42964e-09, 0.5, -309.797, -325.316, 14.0822)
+transform = Transform3D(0.25, 8.41289e-12, -2.35741e-09, -8.41285e-12, 0.25, 4.71482e-09, 2.35741e-09, -4.71482e-09, 0.25, -309.797, -325.316, 14.0822)
 Message = "lying on my bed, staring at the crack on my ceiling..."
 
 [node name="i\'m feeling down_ can someone please send cute cat pics?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.57021e-10, -4.88944e-09, -1.75078e-11, 0.5, 9.77889e-09, 4.88944e-09, -9.77889e-09, 0.5, -328.673, -337.371, 14.0096)
+transform = Transform3D(0.25, 8.75395e-12, -2.44472e-09, -8.7539e-12, 0.25, 4.88944e-09, 2.44472e-09, -4.88944e-09, 0.25, -328.673, -337.371, 14.0096)
 Message = "i'm feeling down. can someone please send cute cat pics?"
 
 [node name="have pic of my sssssnake_ _3" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.79304e-10, -5.06407e-09, -1.81899e-11, 0.5, 1.01281e-08, 5.06407e-09, -1.01281e-08, 0.5, -326.949, -338.751, 14.0073)
+transform = Transform3D(0.25, 9.095e-12, -2.53204e-09, -9.09495e-12, 0.25, 5.06405e-09, 2.53204e-09, -5.06405e-09, 0.25, -326.949, -338.751, 14.0073)
 Message = "have pic of my sssssnake. :3"
 
 [node name="snaaaaake???? snaaaaaake!!!!!!!" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.86807e-10, -5.12227e-09, -1.84173e-11, 0.5, 1.02445e-08, 5.12227e-09, -1.02445e-08, 0.5, -331.73, -339.884, 14.7639)
+transform = Transform3D(0.25, 9.2087e-12, -2.56114e-09, -9.20865e-12, 0.25, 5.12225e-09, 2.56114e-09, -5.12225e-09, 0.25, -331.73, -339.884, 14.7639)
 Message = "snaaaaake???? snaaaaaake!!!!!!!"
 
 [node name="i want a cat _-(" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 4.79304e-10, -5.06407e-09, -1.81899e-11, 0.5, 1.01281e-08, 5.06407e-09, -1.01281e-08, 0.5, -328.678, -339.862, 16.5261)
+transform = Transform3D(0.25, 9.095e-12, -2.53204e-09, -9.09495e-12, 0.25, 5.06405e-09, 2.53204e-09, -5.06405e-09, 0.25, -328.678, -339.862, 16.5261)
 Message = "i want a cat :-("
 
 [node name="*quack*, *quack* *quack* *quack*? *quack* *quack* *quack* *quack*, *quack* *quack*_ (The Millennium Duck ponders philosophical questions_)" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.24096e-10, -5.41331e-09, -1.93268e-11, 0.5, 1.08266e-08, 5.41331e-09, -1.08266e-08, 0.5, -332.595, -354.172, 12.6706)
+transform = Transform3D(0.25, 9.66346e-12, -2.70665e-09, -9.6634e-12, 0.25, 5.4133e-09, 2.70665e-09, -5.4133e-09, 0.25, -332.595, -354.172, 12.6706)
 Message = "*quack*, *quack* *quack* *quack*? *quack* *quack* *quack* *quack*, *quack* *quack*. (The Millennium Duck ponders philosophical questions.)"
 
 [node name="Hi, my computer is not turning on and showing this screen? I don\'t know whyyyy_ Could someone please help me?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.68889e-10, -5.76256e-09, -2.0691e-11, 0.5, 1.15251e-08, 5.76256e-09, -1.15251e-08, 0.5, -340.485, -360.185, 9.66751)
+transform = Transform3D(0.25, 1.03456e-11, -2.88128e-09, -1.03455e-11, 0.25, 5.76255e-09, 2.88128e-09, -5.76255e-09, 0.25, -340.485, -360.185, 9.66751)
 Message = "Hi, my computer is not turning on and showing this screen? I don't know whyyyy. Could someone please help me?"
 
 [node name="did you figure out the issue?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.53882e-10, -5.64614e-09, -2.02363e-11, 0.5, 1.12923e-08, 5.64614e-09, -1.12923e-08, 0.5, -342.007, -361.907, 7.07948)
+transform = Transform3D(0.25, 1.01182e-11, -2.82307e-09, -1.01182e-11, 0.25, 5.64615e-09, 2.82307e-09, -5.64615e-09, 0.25, -342.007, -361.907, 7.07948)
 Message = "did you figure out the issue?"
 
 [node name="im having the same problem, did you figure out why?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.46606e-10, -5.58794e-09, -2.00089e-11, 0.5, 1.11759e-08, 5.58794e-09, -1.11759e-08, 0.5, -342.012, -364.453, 9.81034)
+transform = Transform3D(0.25, 1.00045e-11, -2.79397e-09, -1.00045e-11, 0.25, 5.58795e-09, 2.79397e-09, -5.58795e-09, 0.25, -342.012, -364.453, 9.81034)
 Message = "im having the same problem, did you figure out why?"
 
 [node name="Nevermind, I figured it out_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.61386e-10, -5.70435e-09, -2.04636e-11, 0.5, 1.14087e-08, 5.70435e-09, -1.14087e-08, 0.5, -345.715, -367.813, 6.70689)
+transform = Transform3D(0.25, 1.02319e-11, -2.85217e-09, -1.02318e-11, 0.25, 5.70435e-09, 2.85217e-09, -5.70435e-09, 0.25, -345.715, -367.813, 6.70689)
 Message = "Nevermind, I figured it out."
 
 [node name="time to sleep_ goodnight" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.53882e-10, -5.64614e-09, -2.02363e-11, 0.5, 1.12923e-08, 5.64614e-09, -1.12923e-08, 0.5, -345.73, -384.673, 14.3215)
+transform = Transform3D(0.25, 1.01182e-11, -2.82307e-09, -1.01182e-11, 0.25, 5.64615e-09, 2.82307e-09, -5.64615e-09, 0.25, -345.73, -384.673, 14.3215)
 Message = "time to sleep. goodnight"
 
 [node name="goodmornin\' everyone" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.68889e-10, -5.76256e-09, -2.0691e-11, 0.5, 1.15251e-08, 5.76256e-09, -1.15251e-08, 0.5, -345.736, -389.171, 17.6272)
+transform = Transform3D(0.25, 1.03456e-11, -2.88128e-09, -1.03455e-11, 0.25, 5.76255e-09, 2.88128e-09, -5.76255e-09, 0.25, -345.736, -389.171, 17.6272)
 Message = "goodmornin' everyone"
 
 [node name="once again, sleep time_ goodnight" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.83896e-10, -5.87897e-09, -2.11458e-11, 0.5, 1.17579e-08, 5.87897e-09, -1.17579e-08, 0.5, -346.78, -399.188, 18.82)
+transform = Transform3D(0.25, 1.0573e-11, -2.93949e-09, -1.05729e-11, 0.25, 5.87895e-09, 2.93949e-09, -5.87895e-09, 0.25, -346.78, -399.188, 18.82)
 Message = "once again, sleep time. goodnight"
 
 [node name="top of the morni\' people" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.85032e-10, -6.28643e-09, -2.251e-11, 0.5, 1.25729e-08, 6.28643e-09, -1.25729e-08, 0.5, -346.783, -419.595, 18.478)
+transform = Transform3D(0.25, 1.12551e-11, -3.14322e-09, -1.1255e-11, 0.25, 6.28645e-09, 3.14322e-09, -6.28645e-09, 0.25, -346.783, -419.595, 18.478)
 Message = "top of the mornin' people"
 
 [node name="sleeping time_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.84578e-10, -6.1118e-09, -2.18279e-11, 0.5, 1.22236e-08, 6.1118e-09, -1.22236e-08, 0.5, -348.927, -426.894, 18.4485)
+transform = Transform3D(0.25, 1.0914e-11, -3.0559e-09, -1.0914e-11, 0.25, 6.1118e-09, 3.0559e-09, -6.1118e-09, 0.25, -348.927, -426.894, 18.4485)
 Message = "sleeping time."
 
 [node name="moring time" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.84578e-10, -6.1118e-09, -2.18279e-11, 0.5, 1.22236e-08, 6.1118e-09, -1.22236e-08, 0.5, -355.715, -446.05, 34.9979)
+transform = Transform3D(0.25, 1.0914e-11, -3.0559e-09, -1.0914e-11, 0.25, 6.1118e-09, 3.0559e-09, -6.1118e-09, 0.25, -355.715, -446.05, 34.9979)
 Message = "morning time."
 
 [node name="dead site ROFL" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.8526e-10, -6.34464e-09, -2.27374e-11, 0.5, 1.26893e-08, 6.34464e-09, -1.26893e-08, 0.5, -355.758, -707.763, 34.0602)
+transform = Transform3D(0.25, 1.13688e-11, -3.17232e-09, -1.13687e-11, 0.25, 6.34465e-09, 3.17232e-09, -6.34465e-09, 0.25, -355.758, -707.763, 34.0602)
 Message = "dead site ROFL"
 
 [node name="stfu" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.85487e-10, -6.46105e-09, -2.31921e-11, 0.5, 1.29221e-08, 6.46105e-09, -1.29221e-08, 0.5, -355.756, -710.774, 32.4381)
+transform = Transform3D(0.25, 1.15961e-11, -3.23052e-09, -1.1596e-11, 0.25, 6.46105e-09, 3.23052e-09, -6.46105e-09, 0.25, -355.756, -710.774, 32.4381)
 Message = "stfu	"
 
 [node name="any1 still here?" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 5.85487e-10, -6.46105e-09, -2.31921e-11, 0.5, 1.29221e-08, 6.46105e-09, -1.29221e-08, 0.5, -353.384, -713.537, 34.0432)
+transform = Transform3D(0.25, 1.15961e-11, -3.23052e-09, -1.1596e-11, 0.25, 6.46105e-09, 3.23052e-09, -6.46105e-09, 0.25, -353.384, -713.537, 34.0432)
 Message = "any1 still here? lmao"
 
 [node name="hello? is this thing on? am I all alone? is anyone there? ___ im all alone _(" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.00949e-10, -6.69388e-09, -2.41016e-11, 0.5, 1.33878e-08, 6.69388e-09, -1.33878e-08, 0.5, -351.563, -723.411, 37.8631)
+transform = Transform3D(0.25, 1.20509e-11, -3.34694e-09, -1.20508e-11, 0.25, 6.6939e-09, 3.34694e-09, -6.6939e-09, 0.25, -351.563, -723.411, 37.8631)
 Message = "hello? is this thing on? am I all alone? is anyone there? ... im all alone :(
 "
 
 [node name="iWhy did everyone move to the other site again? That place stinks_ #notmysites thing on? am I all alone? is anyone there? ___ im all alone _(2" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.30735e-10, -6.92671e-09, -2.47837e-11, 0.5, 1.38534e-08, 6.92671e-09, -1.38534e-08, 0.5, -349.095, -732.532, 43.3908)
+transform = Transform3D(0.25, 1.23919e-11, -3.46335e-09, -1.23918e-11, 0.25, 6.9267e-09, 3.46335e-09, -6.9267e-09, 0.25, -349.095, -732.532, 43.3908)
 Message = "Why did everyone move to the other site again? That place stinks. #notmysite
 "
 
 [node name="used to hang here all the time_ miss this place" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.30735e-10, -6.92671e-09, -2.47837e-11, 0.5, 1.38534e-08, 6.92671e-09, -1.38534e-08, 0.5, -344.444, -748.293, 43.9098)
+transform = Transform3D(0.25, 1.23919e-11, -3.46335e-09, -1.23918e-11, 0.25, 6.9267e-09, 3.46335e-09, -6.9267e-09, 0.25, -344.444, -748.293, 43.9098)
 Message = "used to hang here all the time. miss this place"
 
 [node name="no one will know i\'m gay" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.53017e-10, -7.10133e-09, -2.54659e-11, 0.5, 1.42027e-08, 7.10133e-09, -1.42027e-08, 0.5, -344.439, -758.121, 39.5452)
+transform = Transform3D(0.25, 1.27331e-11, -3.55067e-09, -1.2733e-11, 0.25, 7.10135e-09, 3.55067e-09, -7.10135e-09, 0.25, -344.439, -758.121, 39.5452)
 Message = "no one will know i'm gay"
 
 [node name="tjings aren\'t the same on the web anymore_ rip my beloved i\'m gay2" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.53017e-10, -7.10133e-09, -2.54659e-11, 0.5, 1.42027e-08, 7.10133e-09, -1.42027e-08, 0.5, -344.439, -758.121, 39.5452)
+transform = Transform3D(0.25, 1.27331e-11, -3.55067e-09, -1.2733e-11, 0.25, 7.10135e-09, 3.55067e-09, -7.10135e-09, 0.25, -344.439, -758.121, 39.5452)
 Message = "things aren't the same on the web anymore. rip my beloved"
 
 [node name="Rereading my old messages makes me sad_ I don\'t wanna let this go_" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.75527e-10, -7.27596e-09, -2.6148e-11, 0.5, 1.45519e-08, 7.27596e-09, -1.45519e-08, 0.5, -344.485, -825.582, 61.1752)
+transform = Transform3D(0.25, 1.30741e-11, -3.63798e-09, -1.3074e-11, 0.25, 7.27595e-09, 3.63798e-09, -7.27595e-09, 0.25, -344.485, -825.582, 61.1752)
 Message = "Rereading my old messages makes me sad. I don't wanna let this go."
 
 [node name="goodbye" parent="." instance=ExtResource("1_g5mhu")]
-transform = Transform3D(0.5, 6.9781e-10, -7.45058e-09, -2.66027e-11, 0.5, 1.49012e-08, 7.45058e-09, -1.49012e-08, 0.5, -341.819, -838.622, 61.1326)
+transform = Transform3D(0.25, 1.33015e-11, -3.72529e-09, -1.33013e-11, 0.25, 7.4506e-09, 3.72529e-09, -7.4506e-09, 0.25, -341.819, -838.622, 61.1326)
 Message = "goodbye"
