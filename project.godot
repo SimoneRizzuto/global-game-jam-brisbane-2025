@@ -18,6 +18,7 @@ config/icon="res://Scripts/Static/icon.svg"
 [autoload]
 
 Gearbox="*res://Scripts/Modules/Gearbox/gearbox.tscn"
+AudioManager="*res://audio_manager.tscn"
 
 [display]
 

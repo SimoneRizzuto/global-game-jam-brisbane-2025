@@ -25,3 +25,11 @@ func DepthManagement():
 func _on_ocean_finished():
 	oceanSound.stream = load("res://Audio/Ocean (looping kinda).ogg")
 	oceanSound.play()
+	
+func lowPass(on = true):
+	if on:
+		oceanSound.bus = "LowPass"
+		surfaceMusic.bus = "LowPass"
+	else :
+		oceanSound.bus = "Master"
+		surfaceMusic.bus = "Master"

@@ -20,10 +20,13 @@ func Pause(start = false):
 	anim.play("OpenMenu")
 	if (start):
 		justStarted = true
+	else:
+		AudioManager.lowPass()
 
 func UnPause():
 	anim.play("CloseMenu")
 	if (justStarted):
 		AudioManager.oceanSound.play()
 		AudioManager.surfaceMusic.play()
-		justStarted = true
+		justStarted = false
+	AudioManager.lowPass(false)
