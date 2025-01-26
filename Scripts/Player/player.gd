@@ -109,7 +109,6 @@ func _physics_process(delta):
 func depth_management():
 	var index = global_position.y / -maximumDepth
 	index = clampf(index,0.0,1.0)
-	print(index)
 	dashSpeed = lerpf(initialDash,initialDash * maximumDepthMod, index)
 	sinkSpeed = lerpf(initialSink,initialSink * maximumDepthMod, index)
 	speed = lerpf(initialSpeed,initialSpeed * maximumDepthMod, index)
