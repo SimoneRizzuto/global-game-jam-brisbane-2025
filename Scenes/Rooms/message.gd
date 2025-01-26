@@ -10,13 +10,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("CloseMessage") and messageShown:
-		messageShown = false
-		anim.play("SlideOutOfDms")
+	#if Input.is_action_just_pressed("CloseMessage") and messageShown:
+		#messageShown = false
+		#anim.play("SlideOutOfDms")
+	pass
 
 func newMessage(message, imagePath):
-	print(message)
-	label.text = message
-	anim.play("SlideIntoDms")
-	messageShown = true
+	pass
+	#print(message)
+	#label.text = message
+	#anim.play("SlideIntoDms")
+	#messageShown = true
 	

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GGJ2025"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Scenes/Rooms/graphics_test.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Scripts/Static/icon.svg"
 
@@ -21,7 +21,8 @@ Gearbox="*res://Scripts/Modules/Gearbox/gearbox.tscn"
 
 [display]
 
-window/size/mode=2
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [dotnet]
 

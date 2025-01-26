@@ -3,22 +3,22 @@ extends CharacterBody3D
 @onready var gearbox = get_parent().get_parent().get_node("Gearbox")
 
 #physics/movement variables
-@export var speed = 1
+@export var speed = 0.65
 var jump_speed = 5
 var mouse_sensitivity = 0.001
-var accel = 5
+var accel = 3.5
 var friction = 0.95
 var targetVel = Vector3.ZERO
 var strafeMod = 0.3
 
 #systems for managing dashing
 var dashing = false
-@export var dashSpeed = 5
+@export var dashSpeed = 1.0
 
 #Systems for managing surfacing, including launching out of the water and bobbing on the surface
 var gravity = 2
 var fallSpeed = 2
-var sinkSpeed = 0.2
+var sinkSpeed = 1.0
 var surfacePoint = 0.25
 var bobPoint = -0.5
 var surfaced = false
@@ -38,23 +38,33 @@ var oxygenDrain = 0.1
 var oxygenRefil = 30
 var dashOxygenDrain = 1
 
+#increase speed by depth
+var maximumDepthMod = 7.0;
+var maximumDepth = 600.0;
+var initialDash = 0.0
+var initialSink = 0.0
+var initialSpeed = 0.0
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	initialDash = dashSpeed
+	initialSink = sinkSpeed
+	initialSpeed = speed
 
 func _physics_process(delta):
 	if gearbox.paused:
 		if Input.is_action_just_pressed("Pause"):
-			gearbox.paused = false;
+			gearbox.Unpause()
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		else:
 			return
 	
 	elif Input.is_action_just_pressed("Pause"):
-		gearbox.paused = true;
+		gearbox.Pause()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
+	
+	depth_management()
 	
 	var propulsion = Input.get_vector("left", "right", "forward", "back")
 	
@@ -94,6 +104,14 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	camera_bob(delta)
+
+func depth_management():
+	var index = global_position.y / -maximumDepth
+	index = clampf(index,0.0,1.0)
+	print(index)
+	dashSpeed = lerpf(initialDash,initialDash * maximumDepthMod, index)
+	sinkSpeed = lerpf(initialSink,initialSink * maximumDepthMod, index)
+	speed = lerpf(initialSpeed,initialSpeed * maximumDepthMod, index)
 
 #if above the water, fall back to the surface, and then bob up and down until you recieve new input
 func surface_and_descent(delta):
