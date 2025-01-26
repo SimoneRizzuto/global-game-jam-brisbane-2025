@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=37 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bjce11eap1u0p" path="res://Assets/Profile Pics/Blemon.JPG" id="15_x3lvw"]
 [ext_resource type="Texture2D" uid="uid://cwul0wyxgbvoa" path="res://Assets/Profile Pics/Yuppers.JPG" id="16_acmm8"]
 [ext_resource type="Texture2D" uid="uid://c4agrsfmhlj7d" path="res://Assets/Profile Pics/Snake.JPG" id="18_7ooed"]
+[ext_resource type="AudioStream" uid="uid://cwigj33f6uacu" path="res://Audio/Booting WinOS.ogg" id="22_0evo1"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -260,11 +261,70 @@ tracks/4/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_rjpbs"]
+resource_name = "Start"
+step = 0.5
+
+[sub_resource type="Animation" id="Animation_k8e02"]
+resource_name = "StartGame"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TaskBar/Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TaskBar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icons/Control:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r41nn"]
 _data = {
 "CloseMenu": SubResource("Animation_x6273"),
 "OpenMenu": SubResource("Animation_pttju"),
-"RESET": SubResource("Animation_i7qf2")
+"RESET": SubResource("Animation_i7qf2"),
+"Start": SubResource("Animation_rjpbs"),
+"StartGame": SubResource("Animation_k8e02")
 }
 
 [node name="UI" type="Control"]
@@ -719,6 +779,10 @@ offset_top = 184.0
 offset_right = 211.0
 offset_bottom = 240.0
 text = "Browser.exe"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_0evo1")
+autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -39,7 +39,7 @@ var oxygenRefil = 30
 var dashOxygenDrain = 1
 
 #increase speed by depth
-var maximumDepthMod = 7.0;
+var maximumDepthMod = 5.0;
 var maximumDepth = 600.0;
 var initialDash = 0.0
 var initialSink = 0.0

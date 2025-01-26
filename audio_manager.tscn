@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://audio_manager.gd" id="1_4xyb8"]
 [ext_resource type="AudioStream" uid="uid://cfm1yjppqa5no" path="res://Audio/boot_dot_exe.ogg" id="2_5ki8w"]
-[ext_resource type="AudioStream" uid="uid://bbc4qu2chfvqk" path="res://Audio/thoughts_questionmark.ogg" id="3_qcr5r"]
+[ext_resource type="AudioStream" uid="uid://brvsd4p42ju12" path="res://Audio/BubbleOS.ogg" id="3_twjeg"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_4xyb8")
@@ -13,7 +13,7 @@ bus = &"LowPass"
 parameters/looping = false
 
 [node name="MusicBelowSurface" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_qcr5r")
+stream = ExtResource("3_twjeg")
 parameters/looping = true
 
 [connection signal="finished" from="Ocean" to="." method="_on_ocean_finished"]
