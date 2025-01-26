@@ -24,7 +24,7 @@ public partial class TitleCard : Control
 		subTitle.Text = subtitle;
 		visibleSubtitleCharacters = 0;
 
-		clearTime = 8f;
+		clearTime = 6f;
 
 		if (texture != null && image != null) image.Texture = texture;
 	}
