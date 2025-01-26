@@ -40,12 +40,14 @@ public partial class TitleCard : Control
 				if (visibleTitleCharacters < mainTitle.Text.Length + 20)
 				{
 					visibleTitleCharacters++;
-					if (mainTitle.Text[visibleTitleCharacters] == '\n') coolDown += 0.25f;
+					if (visibleTitleCharacters < mainTitle.Text.Length)
+						if (mainTitle.Text[visibleTitleCharacters] == '\n') coolDown += 0.25f;
 
 				}
 				else if (visibleSubtitleCharacters < subTitle.Text.Length)
 				{
 					visibleSubtitleCharacters++;
+					if (visibleSubtitleCharacters < subTitle.Text.Length)
 					if (subTitle.Text[visibleSubtitleCharacters] == '\n') coolDown += 0.25f;
 				}
 			}
