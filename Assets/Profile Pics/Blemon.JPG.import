@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjce11eap1u0p"
-path.s3tc="res://.godot/imported/Blemon.JPG-1e06d0309287bee0977763e1fa416a46.s3tc.ctex"
+path.s3tc="res://.godot/imported/blemon.JPG-d0a95911b0120c71ca0aa7d7a0995a66.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Profile Pics/Blemon.JPG"
-dest_files=["res://.godot/imported/Blemon.JPG-1e06d0309287bee0977763e1fa416a46.s3tc.ctex"]
+source_file="res://Assets/Profile Pics/blemon.JPG"
+dest_files=["res://.godot/imported/blemon.JPG-d0a95911b0120c71ca0aa7d7a0995a66.s3tc.ctex"]
 
 [params]
 
