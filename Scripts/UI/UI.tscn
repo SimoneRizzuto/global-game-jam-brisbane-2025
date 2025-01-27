@@ -18,7 +18,7 @@
 [ext_resource type="FontFile" uid="uid://35cfba05e4rg" path="res://Assets/Fonts/flexi-ibm-vga-true/Flexi_IBM_VGA_True.ttf" id="13_x5x1a"]
 [ext_resource type="Texture2D" uid="uid://c25yoij3p2rsj" path="res://Assets/UI/Fish.png" id="14_iihwv"]
 [ext_resource type="Texture2D" uid="uid://gmekpcfodx5l" path="res://Assets/Profile Pics/crebul0us.JPG" id="15_04lpf"]
-[ext_resource type="Texture2D" uid="uid://bjce11eap1u0p" path="res://Assets/Profile Pics/blemon.JPG" id="15_x3lvw"]
+[ext_resource type="Texture2D" uid="uid://bjce11eap1u0p" path="res://Assets/Profile Pics/Blemon.JPG" id="15_x3lvw"]
 [ext_resource type="Texture2D" uid="uid://cwul0wyxgbvoa" path="res://Assets/Profile Pics/UrSoReal4That.JPG" id="16_acmm8"]
 [ext_resource type="Texture2D" uid="uid://c4agrsfmhlj7d" path="res://Assets/Profile Pics/snakeguy238.JPG" id="18_7ooed"]
 [ext_resource type="AudioStream" uid="uid://cwigj33f6uacu" path="res://Audio/Booting WinOS.ogg" id="22_0evo1"]
