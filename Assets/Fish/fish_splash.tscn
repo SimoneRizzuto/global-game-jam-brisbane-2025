@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6sf2x1x1twlp"]
+
+[ext_resource type="Texture2D" uid="uid://c25yoij3p2rsj" path="res://Assets/Fish/Fish.png" id="1_eprmx"]
+[ext_resource type="Script" path="res://Assets/Fish/fish_splash.gd" id="2_tvkgn"]
+
+[node name="FishSplash" type="TextureRect"]
+offset_right = 264.0
+offset_bottom = 264.0
+pivot_offset = Vector2(116, 88)
+mouse_filter = 2
+texture = ExtResource("1_eprmx")
+expand_mode = 5
+stretch_mode = 4
+script = ExtResource("2_tvkgn")

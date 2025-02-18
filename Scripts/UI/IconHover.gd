@@ -53,6 +53,8 @@ func _unhandled_input(event):
 						Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 					elif type == "ScreenShot":
 						ScreenShot()
+					elif type == "Fish":
+						Fish()
 
 func ScreenShot():
 	UI.visible = false
@@ -60,6 +62,10 @@ func ScreenShot():
 	var image = get_viewport().get_texture().get_image()
 	image.save_png("res://Screenshots/" + str(Time.get_ticks_msec()) + "_screenshot.png")
 	UI.visible = true
+
+func Fish():
+	get_parent().get_node("FishControl").CallFish()
+	wiggle()
 
 func _on_selection_mouse_entered():
 	if !hovered:

@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://diwrrt0upxslp"]
+
+[ext_resource type="Texture2D" uid="uid://dsfu86ekyerdu" path="res://Assets/UI/Wind-OS3.bmp" id="1_q8iaj"]
+[ext_resource type="Script" path="res://Scripts/Modules/Gearbox/WindOs.gd" id="2_hkku2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lijb"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(0, 0, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sssu"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(1708, 0, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_178e8"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(3416, 0, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmibt"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(5124, 0, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he1b0"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(0, 960, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bfpl"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(1708, 960, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8qfs"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(3416, 960, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on3p2"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(5124, 960, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6bgv"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(0, 1920, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asuqp"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(1708, 1920, 1708, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r15dv"]
+atlas = ExtResource("1_q8iaj")
+region = Rect2(3416, 1920, 1708, 960)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ir71c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lijb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sssu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_178e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmibt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he1b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bfpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8qfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on3p2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6bgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asuqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r15dv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="WindOs" type="AnimatedSprite2D"]
+process_mode = 3
+position = Vector2(928, 536)
+sprite_frames = SubResource("SpriteFrames_ir71c")
+autoplay = "default"
+frame = 10
+frame_progress = 1.0
+script = ExtResource("2_hkku2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1712.0
+offset_top = -1168.0
+offset_right = -148.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=38 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
@@ -16,12 +16,13 @@
 [ext_resource type="Script" path="res://Scripts/UI/credits.gd" id="12_k16yb"]
 [ext_resource type="Texture2D" uid="uid://46q21r8qaop0" path="res://Assets/Profile Pics/Big_fan_of_ur_cat.JPG" id="13_arsut"]
 [ext_resource type="FontFile" uid="uid://35cfba05e4rg" path="res://Assets/Fonts/flexi-ibm-vga-true/Flexi_IBM_VGA_True.ttf" id="13_x5x1a"]
-[ext_resource type="Texture2D" uid="uid://c25yoij3p2rsj" path="res://Assets/UI/Fish.png" id="14_iihwv"]
+[ext_resource type="Texture2D" uid="uid://c25yoij3p2rsj" path="res://Assets/Fish/Fish.png" id="14_iihwv"]
 [ext_resource type="Texture2D" uid="uid://gmekpcfodx5l" path="res://Assets/Profile Pics/crebul0us.JPG" id="15_04lpf"]
-[ext_resource type="Texture2D" uid="uid://bjce11eap1u0p" path="res://Assets/Profile Pics/Blemon.JPG" id="15_x3lvw"]
+[ext_resource type="Texture2D" uid="uid://cjee2dqtb4mwe" path="res://Assets/Profile Pics/Blemon.JPG" id="15_x3lvw"]
 [ext_resource type="Texture2D" uid="uid://cwul0wyxgbvoa" path="res://Assets/Profile Pics/UrSoReal4That.JPG" id="16_acmm8"]
 [ext_resource type="Texture2D" uid="uid://c4agrsfmhlj7d" path="res://Assets/Profile Pics/snakeguy238.JPG" id="18_7ooed"]
 [ext_resource type="AudioStream" uid="uid://cwigj33f6uacu" path="res://Audio/Booting WinOS.ogg" id="22_0evo1"]
+[ext_resource type="Script" path="res://Scripts/UI/fish_control.gd" id="22_uu3vk"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -734,6 +735,8 @@ offset_left = 73.2824
 offset_top = 599.145
 offset_right = 241.282
 offset_bottom = 788.483
+nonIcon = false
+type = "Fish"
 
 [node name="IconImg" parent="Icons/Control/Fish" index="0"]
 offset_left = -40.0
@@ -779,6 +782,14 @@ offset_top = 184.0
 offset_right = 211.0
 offset_bottom = 240.0
 text = "Browser.exe"
+
+[node name="FishControl" type="Control" parent="Icons/Control"]
+anchors_preset = 0
+offset_left = 1543.08
+offset_top = 1892.31
+offset_right = 1583.08
+offset_bottom = 1932.31
+script = ExtResource("22_uu3vk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_0evo1")
