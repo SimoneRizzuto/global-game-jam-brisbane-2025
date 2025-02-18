@@ -53,6 +53,12 @@ func _unhandled_input(event):
 						Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 					elif type == "ScreenShot":
 						ScreenShot()
+					elif type == "Fish":
+						Fish()
+
+func Fish():
+	get_parent().get_node("FishControl").CallFish()
+	wiggle()
 
 func ScreenShot():
 	UI.visible = false
