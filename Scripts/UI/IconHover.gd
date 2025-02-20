@@ -19,6 +19,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if type == "Fish" and Gearbox.paused:
+		if Input.is_action_just_pressed("Fish"):
+			Fish()
 	pass
 	#if WiggleTime > 0:
 		#rotation = randf_range(-12,12)

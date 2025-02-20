@@ -21,7 +21,8 @@ public partial class Gearbox : Node
         }
         else
         {
-			this.QueueFree();
+			Gearbox.instance.QueueFree();
+			Gearbox.instance = this;
 		}
 		UI = FindChild("UI");
 		Pause();

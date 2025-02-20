@@ -44,6 +44,8 @@ var maximumDepth = 600.0;
 var initialDash = 0.0
 var initialSink = 0.0
 var initialSpeed = 0.0
+var invertY = 1.0;
+var ContLookVelocity = 2.5;
 
 func _ready():
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -104,7 +106,18 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	look_controller(delta)
+	
 	camera_bob(delta)
+
+func look_controller(delta):
+	var lookDir = Input.get_vector("Look Left", "Look Right", "Look Up", "Look Down")
+	rotate_y(-lookDir.x * ContLookVelocity * delta)
+	cameraArm.rotate_x(-invertY * lookDir.y * ContLookVelocity * delta)
+	cameraArm.rotation.x = clampf(cameraArm.rotation.x, -deg_to_rad(90), deg_to_rad(90))
+	
+	if Input.is_action_just_pressed("Invert Y"):
+		invertY = -invertY
 
 func depth_management():
 	var index = global_position.y / -maximumDepth

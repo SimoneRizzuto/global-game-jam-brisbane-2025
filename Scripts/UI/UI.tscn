@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://rtvkto5k2t5j"]
+[gd_scene load_steps=39 format=3 uid="uid://rtvkto5k2t5j"]
 
 [ext_resource type="Script" path="res://Scenes/Rooms/ui.gd" id="1_7un6y"]
 [ext_resource type="FontFile" uid="uid://cqt8eo5r2gylo" path="res://Assets/Fonts/homoarakhn/HOMOARAK.TTF" id="2_kvb0g"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c4agrsfmhlj7d" path="res://Assets/Profile Pics/snakeguy238.JPG" id="18_7ooed"]
 [ext_resource type="AudioStream" uid="uid://cwigj33f6uacu" path="res://Audio/Booting WinOS.ogg" id="22_0evo1"]
 [ext_resource type="Script" path="res://Scripts/UI/fish_control.gd" id="22_uu3vk"]
+[ext_resource type="PackedScene" uid="uid://bp47dxxf2ukb7" path="res://Assets/UI/windmill.tscn" id="24_at0ud"]
 
 [sub_resource type="Theme" id="Theme_wbco5"]
 default_font = ExtResource("2_kvb0g")
@@ -801,6 +802,8 @@ libraries = {
 "": SubResource("AnimationLibrary_r41nn")
 }
 autoplay = "OpenMenu"
+
+[node name="Windmill" parent="." instance=ExtResource("24_at0ud")]
 
 [connection signal="mouse_entered" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_entered"]
 [connection signal="mouse_exited" from="TaskBar/Control/ButtonContainer/OffButton" to="TaskBar" method="_on_off_button_mouse_exited"]

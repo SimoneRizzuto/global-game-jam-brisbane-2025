@@ -1,114 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctpd4882wbpdx"]
+[gd_scene load_steps=4 format=3 uid="uid://ctpd4882wbpdx"]
 
 [ext_resource type="Script" path="res://Scripts/Modules/Gearbox/Gearbox.cs" id="1_8dana"]
 [ext_resource type="PackedScene" uid="uid://rtvkto5k2t5j" path="res://Scripts/UI/UI.tscn" id="2_qkiua"]
-[ext_resource type="Texture2D" uid="uid://dqu3f2w5rmmw4" path="res://Assets/UI/Wind-OSPacked.png" id="3_de8ai"]
-[ext_resource type="Script" path="res://Scripts/Modules/Gearbox/Windos.gd" id="4_6spe5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a13qc"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(0, 0, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tihwf"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(1708, 0, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r0p0v"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(3416, 0, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_853hi"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(5124, 0, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbh37"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(0, 960, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvad3"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(1708, 960, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rb34"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(3416, 960, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o3r2"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(5124, 960, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_48mbk"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(0, 1920, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sw1yf"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(1708, 1920, 1708, 960)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_11jdn"]
-atlas = ExtResource("3_de8ai")
-region = Rect2(3416, 1920, 1708, 960)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rg5qc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a13qc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tihwf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r0p0v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_853hi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbh37")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uvad3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4rb34")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4o3r2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_48mbk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sw1yf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_11jdn")
-}],
-"loop": false,
-"name": &"default",
-"speed": 4.0
-}]
+[ext_resource type="PackedScene" uid="uid://bp47dxxf2ukb7" path="res://Assets/UI/windmill.tscn" id="3_12m75"]
 
 [node name="Gearbox" type="Node"]
 script = ExtResource("1_8dana")
 
 [node name="UI" parent="." instance=ExtResource("2_qkiua")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(936, 568)
-sprite_frames = SubResource("SpriteFrames_rg5qc")
-autoplay = "default"
-frame = 10
-frame_progress = 1.0
-script = ExtResource("4_6spe5")
-
-[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
-show_behind_parent = true
-offset_left = -1832.0
-offset_top = -1344.0
-offset_right = 1704.0
-offset_bottom = 1456.0
-color = Color(0, 0, 0, 1)
-
-[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
+[node name="Windmill" parent="." instance=ExtResource("3_12m75")]
+visible = false
